@@ -94,6 +94,10 @@
       <Project>{2B8A7265-17B7-1AD7-400A-472F281DBDA0}</Project>
       <Name>Ptut.CSharp.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="Ptut.CSharp.csproj">
+      <Project>{E1E2D91E-B09E-85D5-B830-395BB428DCB6}</Project>
+      <Name>Ptut.CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DietChuggLLC\2DSpriteline\SpriteToPrefab\Editor\SpriteToPrefab_MenuItem.cs" />
