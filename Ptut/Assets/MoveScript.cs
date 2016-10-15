@@ -10,12 +10,12 @@ public class MoveScript : MonoBehaviour
     /// <summary>
     /// Vitesse de déplacement
     /// </summary>
-    public Vector2 speed = new Vector2(10,0);
+    public Vector2 speed = new Vector2(1,1);
 
     /// <summary>
     /// Direction
     /// </summary>
-    public Vector2 direction = new Vector2(1, 0);
+    public Vector2 direction;
 
     private Vector2 movement;
 
@@ -23,14 +23,14 @@ public class MoveScript : MonoBehaviour
     {
         // 2 - Calcul du mouvement
         movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
+          direction.x * speed.x,
+          direction.y * speed.y);
     }
 
     void FixedUpdate()
     {
         // Application du mouvement
         GetComponent<Rigidbody2D>().velocity = movement;
-        Debug.Log(transform.position);
+       // Debug.Log(transform.position);
     }
 }

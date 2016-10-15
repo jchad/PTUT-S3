@@ -19,6 +19,8 @@ public class WeaponScript : MonoBehaviour
     /// </summary>
     public float shootingRate = 0.25f;
 
+   
+    /// </summary>
     //--------------------------------
     // 2 - Rechargement
     //--------------------------------
@@ -45,7 +47,7 @@ public class WeaponScript : MonoBehaviour
     /// <summary>
     /// Création d'un projectile si possible
     /// </summary>
-    public void Attack(bool isEnemy)
+    public void Attack(bool isEnemy, Vector2 curseur)
     {
         if (CanAttack)
         {
@@ -54,9 +56,11 @@ public class WeaponScript : MonoBehaviour
             // Création d'un objet copie du prefab
             var shotTransform = Instantiate(shotPrefab) as Transform;
 
-            // Position
+            // Position d'apparition du tir 
             shotTransform.position = transform.position;
 
+
+           
             // Propriétés du script
             ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
             if (shot != null)
@@ -68,7 +72,7 @@ public class WeaponScript : MonoBehaviour
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                move.direction = this.transform.forward; // ici la droite sera le devant de notre objet!!!! MODIFIE !!!! Test de tir en face du joueur   
+                move.direction = curseur; // ici la droite sera le devant de notre objet!!!! MODIFIE !!!! Test de tir en face du joueur   
             }
         }
     }
