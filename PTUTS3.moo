@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{69144FCD-7C69-4182-912C-ACF9700E5CE1}" Label="" LastModificationDate="1474128529" Name="PTUTS3" Objects="66" Symbols="16" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{69144FCD-7C69-4182-912C-ACF9700E5CE1}" Label="" LastModificationDate="1476042378" Name="PTUTS3" Objects="65" Symbols="16" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1507,7 +1507,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o24">
 <a:CreationDate>1474118175</a:CreationDate>
 <a:ModificationDate>1474128025</a:ModificationDate>
-<a:Rect>((4088,-8689), (8363,7746))</a:Rect>
+<a:Rect>((4066,-8689), (8400,7746))</a:Rect>
 <a:ListOfPoints>((8363,-8689),(8363,-178),(4123,-178),(4088,7746))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>13</a:ArrowStyle>
@@ -1753,9 +1753,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>numArme</a:Code>
 <a:CreationDate>1474117290</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474117324</a:ModificationDate>
+<a:ModificationDate>1476042378</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
-<a:DataType>int</a:DataType>
+<a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o38">

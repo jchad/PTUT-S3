@@ -1,0 +1,5 @@
+ALTER TABLE `filematchmaking` ADD CONSTRAINT fk_nojoueur FOREIGN KEY (noJoueur) REFERENCES (joueur.noJoueur);
+ALTER TABLE `filematchmaking` ADD CONSTRAINT fk_niveauJoueur FOREIGN KEY (niveauJoueur) REFERENCES (joueur.niveau);
+ALTER TABLE `filematchmaking` ADD CONSTRAINT fk_nojoueur FOREIGN KEY (`noJoueur`) REFERENCES (`ptut.joueur.noJoueur`) ;
+
+alter table liste amis

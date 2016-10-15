@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{69144FCD-7C69-4182-912C-ACF9700E5CE1}" Label="" LastModificationDate="1474128162" Name="PTUTS3" Objects="62" Symbols="16" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{69144FCD-7C69-4182-912C-ACF9700E5CE1}" Label="" LastModificationDate="1474128529" Name="PTUTS3" Objects="66" Symbols="16" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1444,8 +1444,8 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o15">
 <a:CreationDate>1474118171</a:CreationDate>
 <a:ModificationDate>1474118171</a:ModificationDate>
-<a:Rect>((-11887,10582), (7179,13002))</a:Rect>
-<a:ListOfPoints>((-11887,11756),(7179,11756))</a:ListOfPoints>
+<a:Rect>((-11887,10540), (7462,12960))</a:Rect>
+<a:ListOfPoints>((-11887,11714),(7462,11714))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>13</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -1465,8 +1465,8 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o18">
 <a:CreationDate>1474118172</a:CreationDate>
 <a:ModificationDate>1474119293</a:ModificationDate>
-<a:Rect>((7519,15046), (26213,17381))</a:Rect>
-<a:ListOfPoints>((7519,15203),(15941,15203),(15941,17381),(26213,17381))</a:ListOfPoints>
+<a:Rect>((7837,15582), (26213,17449))</a:Rect>
+<a:ListOfPoints>((7837,16275),(15941,16275),(15941,17381),(26213,17381))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -1486,8 +1486,8 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o21">
 <a:CreationDate>1474118174</a:CreationDate>
 <a:ModificationDate>1474128151</a:ModificationDate>
-<a:Rect>((6650,26), (24549,7714))</a:Rect>
-<a:ListOfPoints>((21737,26),(21737,6540),(6650,6540))</a:ListOfPoints>
+<a:Rect>((6877,26), (24549,5878))</a:Rect>
+<a:ListOfPoints>((21737,26),(21737,4704),(6877,4704))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>13</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -1507,8 +1507,8 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o24">
 <a:CreationDate>1474118175</a:CreationDate>
 <a:ModificationDate>1474128025</a:ModificationDate>
-<a:Rect>((4123,-8689), (8363,8818))</a:Rect>
-<a:ListOfPoints>((8363,-8689),(8363,-178),(4123,-178),(4123,8818))</a:ListOfPoints>
+<a:Rect>((4088,-8689), (8363,7746))</a:Rect>
+<a:ListOfPoints>((8363,-8689),(8363,-178),(4123,-178),(4088,7746))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>13</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -1688,7 +1688,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:CreationDate>1474118167</a:CreationDate>
 <a:ModificationDate>1474119821</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-970,6205), (9894,17815))</a:Rect>
+<a:Rect>((-1536,4257), (10460,19763))</a:Rect>
 <a:LineColor>128</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1743,7 +1743,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Arme</a:Code>
 <a:CreationDate>1474117191</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128138</a:ModificationDate>
+<a:ModificationDate>1474128522</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -2123,7 +2123,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Personnage</a:Code>
 <a:CreationDate>1474118167</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128162</a:ModificationDate>
+<a:ModificationDate>1474128295</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -2201,8 +2201,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>getListeBonus</a:Code>
 <a:CreationDate>1474127964</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128000</a:ModificationDate>
+<a:ModificationDate>1474128522</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>List</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o72">
@@ -2211,9 +2212,13 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>getBonusActuel</a:Code>
 <a:CreationDate>1474128002</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128013</a:ModificationDate>
+<a:ModificationDate>1474128436</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>Bonus</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
+<c:ObjectReturnType>
+<o:Class Ref="o36"/>
+</c:ObjectReturnType>
 </o:Operation>
 <o:Operation Id="o73">
 <a:ObjectID>C63ADA90-C1F5-447C-8F19-BCDA68945068</a:ObjectID>
@@ -2221,8 +2226,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>ajouterBonus</a:Code>
 <a:CreationDate>1474128033</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128060</a:ModificationDate>
+<a:ModificationDate>1474128522</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>boolean</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o74">
@@ -2231,8 +2237,56 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>majBonus</a:Code>
 <a:CreationDate>1474128062</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128075</a:ModificationDate>
+<a:ModificationDate>1474128522</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>boolean</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+</o:Operation>
+<o:Operation Id="o75">
+<a:ObjectID>E643875A-FDE7-4F19-8275-739FD6673153</a:ObjectID>
+<a:Name>getListeArme</a:Name>
+<a:Code>getListeArme</a:Code>
+<a:CreationDate>1474128221</a:CreationDate>
+<a:Creator>Jordan</a:Creator>
+<a:ModificationDate>1474128529</a:ModificationDate>
+<a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>List</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+</o:Operation>
+<o:Operation Id="o76">
+<a:ObjectID>0FC34044-7E28-4342-A791-5C8A89398EFF</a:ObjectID>
+<a:Name>getArmeActuel</a:Name>
+<a:Code>getArmeActuel</a:Code>
+<a:CreationDate>1474128221</a:CreationDate>
+<a:Creator>Jordan</a:Creator>
+<a:ModificationDate>1474128436</a:ModificationDate>
+<a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>Arme</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+<c:ObjectReturnType>
+<o:Class Ref="o29"/>
+</c:ObjectReturnType>
+</o:Operation>
+<o:Operation Id="o77">
+<a:ObjectID>69549B25-890C-4BE9-8F5F-D1D426BA0C6F</a:ObjectID>
+<a:Name>ajouterArme</a:Name>
+<a:Code>ajouterArme</a:Code>
+<a:CreationDate>1474128221</a:CreationDate>
+<a:Creator>Jordan</a:Creator>
+<a:ModificationDate>1474128522</a:ModificationDate>
+<a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>boolean</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+</o:Operation>
+<o:Operation Id="o78">
+<a:ObjectID>34BDFA56-0A0F-4E31-9274-F3427BCEEE36</a:ObjectID>
+<a:Name>majArme</a:Name>
+<a:Code>majArme</a:Code>
+<a:CreationDate>1474128221</a:CreationDate>
+<a:Creator>Jordan</a:Creator>
+<a:ModificationDate>1474128522</a:ModificationDate>
+<a:Modifier>Jordan</a:Modifier>
+<a:ReturnType>boolean</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 </c:Operations>
@@ -2243,11 +2297,11 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Bonus</a:Code>
 <a:CreationDate>1474118168</a:CreationDate>
 <a:Creator>Jordan</a:Creator>
-<a:ModificationDate>1474128162</a:ModificationDate>
+<a:ModificationDate>1474128436</a:ModificationDate>
 <a:Modifier>Jordan</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o75">
+<o:Attribute Id="o79">
 <a:ObjectID>9C851BA2-C280-4465-95DF-A4E0433C57DE</a:ObjectID>
 <a:Name>noBonus</a:Name>
 <a:Code>noBonus</a:Code>
@@ -2258,7 +2312,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>int</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o76">
+<o:Attribute Id="o80">
 <a:ObjectID>9636FC66-2959-4694-BCAF-6A4054A2AE3D</a:ObjectID>
 <a:Name>nomBonus</a:Name>
 <a:Code>nomBonus</a:Code>
@@ -2269,7 +2323,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o77">
+<o:Attribute Id="o81">
 <a:ObjectID>9187A0C9-BC35-4143-9672-8A22CCEF3007</a:ObjectID>
 <a:Name>effet</a:Name>
 <a:Code>effet</a:Code>
@@ -2429,7 +2483,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Generalization>
 </c:Generalizations>
 <c:TargetModels>
-<o:TargetModel Id="o78">
+<o:TargetModel Id="o82">
 <a:ObjectID>76DF791F-BE7F-4C6D-AC09-1B53281A6164</a:ObjectID>
 <a:Name>Analyse</a:Name>
 <a:Code>Analysis</a:Code>
