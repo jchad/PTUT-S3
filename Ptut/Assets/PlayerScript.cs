@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour {
             shootDirection.z = 0.0f;
             shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
             shootDirection = shootDirection - transform.position;
+            shootDirection = CalculDirection(shootDirection);
             WeaponScript weapon = GetComponent<WeaponScript>();
             if (weapon != null)
             {
@@ -28,5 +29,20 @@ public class PlayerScript : MonoBehaviour {
                 weapon.Attack(false, shootDirection);
             }
         }
+    }
+
+    Vector3 CalculDirection (Vector3 direction)
+    {
+        float x = direction.x;
+        float y = direction.y;
+        while ((x > 1 || x < -1) || (y > 1 || y < -1))
+        {
+            x = x / 10;
+            y = y / 10;
+            Debug.Log(x);
+            Debug.Log(y);  
+        }
+              
+        return new Vector3(x,y,0);
     }
 }

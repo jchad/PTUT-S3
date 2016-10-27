@@ -10,7 +10,8 @@ public class MoveScript : MonoBehaviour
     /// <summary>
     /// Vitesse de déplacement
     /// </summary>
-    public Vector2 speed = new Vector2(1,1);
+    public int speedx = 30;
+    public int speedy = 30;
 
     /// <summary>
     /// Direction
@@ -19,12 +20,13 @@ public class MoveScript : MonoBehaviour
 
     private Vector2 movement;
 
-    void Update()
+    void Start()
     {
         // 2 - Calcul du mouvement
         movement = new Vector2(
-          direction.x * speed.x,
-          direction.y * speed.y);
+          direction.x * speedx,
+          direction.y * speedy);
+        Debug.Log(movement);
     }
 
     void FixedUpdate()
