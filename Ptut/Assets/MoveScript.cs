@@ -23,7 +23,7 @@ public class MoveScript : MonoBehaviour
     {
         // 2 - Calcul du mouvement
         movement = new Vector2(
-          direction.x * speed.x,
+          direction.x *speed.x,
           direction.y * speed.y);
     }
 
