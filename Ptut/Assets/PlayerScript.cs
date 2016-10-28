@@ -16,18 +16,27 @@ public class PlayerScript : MonoBehaviour {
 
         if (shoot)
         {
+           
             Vector3 shootDirection;
             shootDirection = Input.mousePosition;
             shootDirection.z = 0.0f;
             shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
             shootDirection = shootDirection - transform.position;
             shootDirection = CalculDirection(shootDirection);
-            WeaponScript weapon = GetComponent<WeaponScript>();
-            if (weapon != null)
+            if (GetComponent<WeaponScript>().enabled)
             {
-                // false : le joueur n'est pas un ennemi
+                WeaponScript weapon = GetComponent<WeaponScript>();
                 weapon.Attack(false, shootDirection);
             }
+            else if (GetComponent<ShotgunScript>().enabled)
+            {
+                ShotgunScript weapon = GetComponent<ShotgunScript>();
+                weapon.Attack(false, shootDirection);
+            }
+        
+                // false : le joueur n'est pas un ennemi
+                
+            
         }
     }
 
