@@ -69,13 +69,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HealthScript.cs" />
-    <Compile Include="Assets\MoveScript.cs" />
-    <Compile Include="Assets\PlayerScript.cs" />
-    <Compile Include="Assets\ShotScript.cs" />
-    <Compile Include="Assets\ShotgunScript.cs" />
-    <Compile Include="Assets\WeaponScript.cs" />
-    <Compile Include="Assets\viseur.cs" />
+    <Compile Include="Assets\Scripts\HealthScript.cs" />
+    <Compile Include="Assets\Scripts\MoveScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\ShotScript.cs" />
+    <Compile Include="Assets\Scripts\ShotgunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponScript.cs" />
+    <Compile Include="Assets\Scripts\viseur.cs" />
+    <Compile Include="Assets\bonus_shotgun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

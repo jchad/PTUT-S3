@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public int nbTirs = 0;
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -13,7 +14,7 @@ public class PlayerScript : MonoBehaviour {
         bool shoot = Input.GetButtonDown("Fire1");
         shoot |= Input.GetButtonDown("Fire2");
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
-
+        
         if (shoot)
         {
            
@@ -30,8 +31,20 @@ public class PlayerScript : MonoBehaviour {
             }
             else if (GetComponent<ShotgunScript>().enabled)
             {
-                ShotgunScript weapon = GetComponent<ShotgunScript>();
-                weapon.Attack(false, shootDirection);
+                if (nbTirs != 0)
+                {
+                    ShotgunScript weapon = GetComponent<ShotgunScript>();
+                    weapon.Attack(false, shootDirection);
+                    nbTirs -= 1;
+                }
+                else
+                {
+                    ShotgunScript shot = GetComponent<ShotgunScript>();
+                    shot.enabled = false;
+                    WeaponScript weapon = GetComponent<WeaponScript>();
+                    weapon.enabled = true;
+                    weapon.Attack(false, shootDirection);
+                }
             }
         
                 // false : le joueur n'est pas un ennemi
