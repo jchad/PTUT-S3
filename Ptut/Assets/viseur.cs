@@ -12,6 +12,8 @@ public class viseur : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(pos);
+        transform.position = pos;
 	}
 }
