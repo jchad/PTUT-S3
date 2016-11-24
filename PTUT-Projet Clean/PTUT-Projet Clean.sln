@@ -7,6 +7,8 @@ Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assemb
 EndProject
 Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-CSharp-Editor.csproj", "{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}"
 EndProject
+Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-UnityScript.unityproj", "{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
