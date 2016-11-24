@@ -2,7 +2,7 @@
 private var formPassword = ""; //this is his password
 var formText = ""; //this field is where the messages sent by PHP script will be in
 
-static var urlip   = "http://checkip.dyndns.org/";
+var urlip   = "http://checkip.dyndns.org/";
 static var pubIP = "";
 
 
@@ -39,7 +39,8 @@ function Login() {
         print(w.error); //if there is an error, tell us
     } else {
     	if(w.text=="Connexion réussie"){
-    		pubIP=CheckIP();
+    		CheckIP();
+    		Debug.Log(pubIP);
     		Application.LoadLevel("PremiereScene");
     	}
         formText = w.text; //here we return the data our PHP told us
@@ -51,13 +52,11 @@ function Login() {
     formPassword = "";
 }
 
-static function CheckIP ()
-{
+function CheckIP(){
     var www : WWW = new WWW (urlip);
     yield www;
    pubIP = www.tex;
    //pubIP = pubIP.Substring(pubIP.IndexOf(“:”)+1);
    //pubIP = pubIP.Substring(0,pubIP.IndexOf(“<"));
     Debug.Log(pubIP);
-    return pubIP;
 }
