@@ -72,7 +72,7 @@ public class WeaponScript : MonoBehaviour
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                move.direction = curseur; // ici la droite sera le devant de notre objet!!!! MODIFIE !!!! Test de tir en face du joueur   
+                //move.direction = curseur; ici la droite sera le devant de notre objet!!!! MODIFIE !!!! Test de tir en face du joueur   
             }
         }
     }

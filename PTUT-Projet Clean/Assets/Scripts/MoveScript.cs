@@ -1,38 +1,25 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Déplace l'objet
-/// </summary>
+
 public class MoveScript : MonoBehaviour
 {
-    // 1 - Designer variables
-
-    /// <summary>
-    /// Vitesse de déplacement
-    /// </summary>
-    public int speedx = 30;
-    public int speedy = 30;
-
-    /// <summary>
-    /// Direction
-    /// </summary>
-    public Vector2 direction;
-
-    private Vector2 movement;
+    private float speedx;
+    private float speedy;
+	private Vector2 direction;
+	private Rigidbody2D body;
+	public float maxSpeed = 5f;
 
     void Start()
     {
-        // 2 - Calcul du mouvement
-        movement = new Vector2(
-          direction.x * speedx,
-          direction.y * speedy);
-        Debug.Log(movement);
+		body = GetComponent<Rigidbody2D> ();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Application du mouvement
-        GetComponent<Rigidbody2D>().velocity = movement;
-       // Debug.Log(transform.position);
+		speedx = Input.GetAxis("Horizontal");
+
+		body.velocity = new Vector2(speedx * maxSpeed, body.velocity.y);
     }
 }

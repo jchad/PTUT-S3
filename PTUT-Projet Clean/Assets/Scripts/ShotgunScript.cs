@@ -68,7 +68,7 @@ public class ShotgunScript : MonoBehaviour {
                 MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
                 if (move != null)
                 {
-                    move.direction = curseur; //direction du tir = position de la souris
+                    //move.direction = curseur; //direction du tir = position de la souris
                 }
             }
         }

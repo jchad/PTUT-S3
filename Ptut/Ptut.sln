@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{70CAB530-ECAA-AEB2-59E4-E443E12297AD}") = "Ptut", "Assembly-CSharp-firstpass.csproj", "{5FA16463-4A9F-24AF-BDDD-7A8F61B61F22}"
 EndProject
+Project("{70CAB530-ECAA-AEB2-59E4-E443E12297AD}") = "Ptut", "Assembly-CSharp.csproj", "{E11EFDB2-CDDA-EA5E-8128-419289AD39BE}"
+EndProject
 Project("{70CAB530-ECAA-AEB2-59E4-E443E12297AD}") = "Ptut", "Assembly-CSharp-Editor.csproj", "{E3B12A6B-4C48-8F65-9839-C6B327B99C94}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{5FA16463-4A9F-24AF-BDDD-7A8F61B61F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FA16463-4A9F-24AF-BDDD-7A8F61B61F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FA16463-4A9F-24AF-BDDD-7A8F61B61F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11EFDB2-CDDA-EA5E-8128-419289AD39BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11EFDB2-CDDA-EA5E-8128-419289AD39BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11EFDB2-CDDA-EA5E-8128-419289AD39BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11EFDB2-CDDA-EA5E-8128-419289AD39BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3B12A6B-4C48-8F65-9839-C6B327B99C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3B12A6B-4C48-8F65-9839-C6B327B99C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B12A6B-4C48-8F65-9839-C6B327B99C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
