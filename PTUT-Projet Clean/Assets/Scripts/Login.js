@@ -1,5 +1,6 @@
 ﻿private var formNick = ""; //this is the field where the player will put the name to login
 private var formPassword = ""; //this is his password
+static var infouser : Array;
 var formText = ""; //this field is where the messages sent by PHP script will be in
 
 var urlip   = "http://checkip.dyndns.org/";
@@ -9,7 +10,7 @@ static var pubIP = "";
 var URL = "localhost/PTUT/login.php"; //change for your URL
 var hash = "hashcode"; //change your secret code, and remember to change into the PHP file too
 
-private var textrect = Rect (10, 90, 200, 30); //just make a GUI object rectangle
+private var textrect = Rect (10, 90,800, 800); //just make a GUI object rectangle
 
 function OnGUI() {
     GUI.Label( Rect (10, 10, 80, 20), "Your nick:" ); //text with your nick
@@ -38,12 +39,22 @@ function Login() {
     if (w.error != null) {
         print(w.error); //if there is an error, tell us
     } else {
-    	if(w.text=="Connexion réussie"){
+    	var test=w.text;
+    	print(test);
+    	var temp=test.Split(";"[0]);
+    	infouser=temp;
+    	if(infouser[0]=="1"){
+    		pseudo = formNick;
     		CheckIP();
     		Debug.Log(pubIP);
+    		print(infouser[0]);
+    		print(infouser[1]);
+    		print(infouser[2]);
+    		print(infouser[3]);
     		Application.LoadLevel("PremiereScene");
-    	}
-        formText = w.text; //here we return the data our PHP told us
+    	}else{
+    		formText = w.text; //here we return the data our PHP told us
+        }
         print("Test ok");
         w.Dispose(); //clear our form in game
     }
