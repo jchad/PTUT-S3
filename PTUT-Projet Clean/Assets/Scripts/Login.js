@@ -50,8 +50,7 @@ function Login() {
     		print(infouser[0]);
     		print(infouser[1]);
     		print(infouser[2]);
-    		print(infouser[3]);
-    		Application.LoadLevel("PremiereScene");
+    		Application.LoadLevel("Main");
     	}else{
     		formText = w.text; //here we return the data our PHP told us
         }
