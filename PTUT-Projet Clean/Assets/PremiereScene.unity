@@ -381,6 +381,45 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1542351773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542351771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ba56d037c0a1e4a8b7beafaab9bc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbTirs: 0
+  speed: 5
+--- !u!114 &1542351774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542351771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd102ff6d91f794cb3444e14539d7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 4000010794195702, guid: dbbb21a5ad31e904ca5db36345c1c80c, type: 2}
+  shootingRate: 0.25
+--- !u!114 &1542351775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542351771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462e204ad12c71447a58c44f4be590c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 4000010794195702, guid: dbbb21a5ad31e904ca5db36345c1c80c, type: 2}
+  shootingRate: 0.25
 --- !u!58 &1542351776
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -401,9 +440,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542351771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c06185b28b1119e4abf435bf2d62fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  speedx: 30
+  speedy: 30
+  direction: {x: 0, y: 0, z: 0}
