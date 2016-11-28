@@ -22,14 +22,28 @@ GameObject:
   - 33: {fileID: 33000013322592972}
   - 23: {fileID: 23000011743312152}
   - 50: {fileID: 50000012040964214}
-  - 114: {fileID: 114000010588958750}
-  - 60: {fileID: 60000012864147318}
+  - 61: {fileID: 61000011157424270}
   - 114: {fileID: 114000011689012684}
   - 114: {fileID: 114000012975108850}
   - 114: {fileID: 114000010483236702}
   - 114: {fileID: 114000011143696904}
   m_Layer: 0
   m_Name: Player 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011161205278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010074579540}
+  m_Layer: 0
+  m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +85,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4000010074579540
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011161205278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011810875010}
+  m_RootOrder: 2
 --- !u!4 &4000011810875010
 Transform:
   m_ObjectHideFlags: 1
@@ -84,6 +111,7 @@ Transform:
   m_Children:
   - {fileID: 4000012329843670}
   - {fileID: 4000012403671842}
+  - {fileID: 4000010074579540}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012329843670
@@ -228,17 +256,17 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011097612230}
   m_UseAutoMass: 0
-  m_Mass: 0.19634955
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &60000012864147318
-PolygonCollider2D:
+--- !u!61 &61000011157424270
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -249,22 +277,8 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.30064774, y: 0.9131114}
-      - {x: 0, y: 1}
-      - {x: 0.24895477, y: 0.96365625}
-      - {x: 0.40610695, y: 0.82470024}
-      - {x: 0.4971428, y: 0.6772886}
-      - {x: 0.4967003, y: -0.6084959}
-      - {x: 0.4350357, y: -0.7791155}
-      - {x: 0.29987144, y: -0.9291132}
-      - {x: 0.0396595, y: -1.014564}
-      - {x: -0.20600319, y: -0.9681923}
-      - {x: -0.4083042, y: -0.82556254}
-      - {x: -0.51926994, y: -0.6120346}
-      - {x: -0.5010853, y: 0.59159815}
-      - {x: -0.437191, y: 0.73723984}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
 --- !u!65 &65000010967559796
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -288,22 +302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba56d037c0a1e4a8b7beafaab9bc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbTirs: 0
-  speed: 5
---- !u!114 &114000010588958750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011097612230}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1c8c053797dbd47b1cdd12cf884201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 20
-  isGrounded: 1
-  maxSpeed: 5
+  jumpForce: 5500
+  maxiSpeed: 7
+  groundPoint: {fileID: 4000010074579540}
+  groundRadius: 0.01
+  sol:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114000011143696904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,22 +336,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 24
-    i1: 239
-    i2: 234
-    i3: 127
-    i4: 211
-    i5: 214
-    i6: 206
-    i7: 180
-    i8: 58
-    i9: 87
-    i10: 250
-    i11: 207
-    i12: 103
-    i13: 130
-    i14: 150
-    i15: 166
+    i0: 202
+    i1: 243
+    i2: 178
+    i3: 215
+    i4: 28
+    i5: 80
+    i6: 102
+    i7: 212
+    i8: 155
+    i9: 118
+    i10: 153
+    i11: 192
+    i12: 193
+    i13: 100
+    i14: 81
+    i15: 214
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114000012975108850
