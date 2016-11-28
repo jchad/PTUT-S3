@@ -47,7 +47,7 @@ public class WeaponScript : MonoBehaviour
     /// <summary>
     /// Création d'un projectile si possible
     /// </summary>
-    public void Attack(bool isEnemy, Vector3 curseur)
+    public void Attack(bool isEnemy, Vector2 curseur)
     {
         if (CanAttack)
         {
@@ -72,7 +72,7 @@ public class WeaponScript : MonoBehaviour
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                move.direction = curseur;
+                //move.direction = curseur; ici la droite sera le devant de notre objet!!!! MODIFIE !!!! Test de tir en face du joueur   
             }
         }
     }
