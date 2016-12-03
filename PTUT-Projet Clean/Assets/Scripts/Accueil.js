@@ -5,7 +5,7 @@
     }
 
     if(GUI.Button(Rect(Screen.width / 2 - 100, Screen.height / 2 - 75, 200, 50), "S'inscrire")){
-
+    	Application.LoadLevel("Register");
 
     }
 
