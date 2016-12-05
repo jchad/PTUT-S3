@@ -184,6 +184,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010494664576, guid: 2032627957d7c414385044ec1b21a731, type: 2}
       propertyPath: m_LocalPosition.x
       value: -8.562014
@@ -214,6 +219,48 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010494664576, guid: 2032627957d7c414385044ec1b21a731, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_OnlineScene
+      value: PremiereScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_OfflineScene
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_DontDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_RunInBackground
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 1000011097612230, guid: caf3b2d71c5066d49b7699c0c16451d6,
+        type: 2}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000012673103506, guid: b010d4390dd501b4990d616a9162b1a4,
+        type: 2}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_PlayerSpawnMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012734053274, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: showGUI
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

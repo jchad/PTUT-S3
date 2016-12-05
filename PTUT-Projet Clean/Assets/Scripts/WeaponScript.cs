@@ -5,13 +5,7 @@ using UnityEngine.Networking;
 /// </summary>
 public class WeaponScript : NetworkBehaviour
 {
-    //--------------------------------
-    // 1 - Designer variables
-    //--------------------------------
 
-    /// <summary>
-    /// Prefab du projectile
-    /// </summary>
     public Transform shotPrefab;
 
     /// <summary>
@@ -57,10 +51,10 @@ public class WeaponScript : NetworkBehaviour
             shootCooldown = shootingRate;
 
             // Création d'un objet copie du prefab
-			var shotTransform = Instantiate(shotPrefab) as Transform;
+            var shotTransform = (GameObject)Instantiate(shotPrefab, transform.position, transform.rotation);
 
-            // Position d'apparition du tir 
-            shotTransform.position = transform.position;
+
+     //       shotTransform.position = transform.position;
 
 
            
@@ -75,9 +69,8 @@ public class WeaponScript : NetworkBehaviour
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                Debug.Log("test");
                 move.direction = curseur;
-				NetworkServer.Spawn (shotTransform.gameObject);
+				NetworkServer.Spawn (shotTransform);
             }
         }
     }

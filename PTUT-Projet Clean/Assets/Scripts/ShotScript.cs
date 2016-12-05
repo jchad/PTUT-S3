@@ -9,9 +9,4 @@ public class ShotScript : MonoBehaviour {
 	void Start () {
 		Destroy (gameObject, 1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
