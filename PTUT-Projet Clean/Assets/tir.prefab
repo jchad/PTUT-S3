@@ -25,6 +25,8 @@ GameObject:
   - 114: {fileID: 114000012980576294}
   - 114: {fileID: 114000013966916694}
   - 54: {fileID: 54000012347859478}
+  - 114: {fileID: 114000013894170306}
+  - 114: {fileID: 114000011179313450}
   m_Layer: 0
   m_Name: tir
   m_TagString: Untagged
@@ -96,6 +98,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114000011179313450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012673103506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114000012980576294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +131,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   isEnemyShot: 0
+--- !u!114 &114000013894170306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012673103506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 176
+    i1: 16
+    i2: 212
+    i3: 57
+    i4: 13
+    i5: 213
+    i6: 1
+    i7: 180
+    i8: 153
+    i9: 13
+    i10: 97
+    i11: 106
+    i12: 145
+    i13: 98
+    i14: 177
+    i15: 164
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000013966916694
 MonoBehaviour:
   m_ObjectHideFlags: 1

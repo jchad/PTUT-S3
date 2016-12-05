@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-
+using UnityEngine.Networking;
 /// <summary>
 /// Crée des projectiles
 /// </summary>
-public class WeaponScript : MonoBehaviour
+public class WeaponScript : NetworkBehaviour
 {
     //--------------------------------
     // 1 - Designer variables
@@ -47,14 +47,17 @@ public class WeaponScript : MonoBehaviour
     /// <summary>
     /// Création d'un projectile si possible
     /// </summary>
-    public void Attack(bool isEnemy, Vector2 curseur)
+	///
+
+	[Command]
+    public void CmdAttack(bool isEnemy, Vector2 curseur)
     {
         if (CanAttack)
         {
             shootCooldown = shootingRate;
 
             // Création d'un objet copie du prefab
-            var shotTransform = Instantiate(shotPrefab) as Transform;
+			var shotTransform = Instantiate(shotPrefab) as Transform;
 
             // Position d'apparition du tir 
             shotTransform.position = transform.position;
@@ -74,6 +77,7 @@ public class WeaponScript : MonoBehaviour
             {
                 Debug.Log("test");
                 move.direction = curseur;
+				NetworkServer.Spawn (shotTransform.gameObject);
             }
         }
     }

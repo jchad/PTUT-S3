@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class ShotgunScript : MonoBehaviour {
+public class ShotgunScript : NetworkBehaviour {
 
  public Transform shotPrefab;
 
@@ -38,7 +39,8 @@ public class ShotgunScript : MonoBehaviour {
     /// <summary>
     /// Création d'un projectile si possible
     /// </summary>
-    public void Attack(bool isEnemy, Vector2 curseur)
+	[Command]
+    public void CmdAttack(bool isEnemy, Vector2 curseur)
     {
         if (CanAttack)
         {

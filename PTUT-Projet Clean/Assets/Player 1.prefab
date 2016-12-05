@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462e204ad12c71447a58c44f4be590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 4000012505799144, guid: b010d4390dd501b4990d616a9162b1a4, type: 2}
+  shotPrefab: {fileID: 4000012056002544, guid: b010d4390dd501b4990d616a9162b1a4, type: 2}
   shootingRate: 0.25
 --- !u!114 &114000011689012684
 MonoBehaviour:
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

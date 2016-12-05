@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class PlayerScript : MonoBehaviour
+using UnityEngine.Networking;
+public class PlayerScript : NetworkBehaviour
 {
 	private float speedHor;
 
@@ -39,6 +39,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
 	{
+		if (!isLocalPlayer) {
+			return;
+		}
 		isGrounded = IsGrounded ();
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
@@ -57,20 +60,20 @@ public class PlayerScript : MonoBehaviour
 
             if (weapon.enabled)
             {
-                weapon.Attack(false, shootDirection);
+                weapon.CmdAttack(false, shootDirection);
             }
             else if (GetComponent<ShotgunScript>().enabled)
             {
                 if (nbTirs != 0)
                 {
-                    shot.Attack(false, shootDirection);
+                    shot.CmdAttack(false, shootDirection);
                     nbTirs -= 1;
                 }
                 else
                 {
                     shot.enabled = false;
                     weapon.enabled = true;
-                    weapon.Attack(false, shootDirection);
+                    weapon.CmdAttack(false, shootDirection);
                 }
             }
             // false : le joueur n'est pas un ennemi
@@ -114,5 +117,10 @@ public class PlayerScript : MonoBehaviour
 			body.AddForce (new Vector2 (0, jumpForce));
 		}
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
+	}
+
+	public override void OnStartLocalPlayer()
+	{
+		GetComponent<MeshRenderer>().material.color = Color.red;
 	}
 }
