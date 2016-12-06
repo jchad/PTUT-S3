@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Networking;
 
-public class PlayerScript : NetworkBehaviour
+public class PlayerV2Script : NetworkBehaviour
 {
 	private float speedHor;
 
 	private bool shoot;
 
-    private int nbTirs = 0;
-
 	private Rigidbody2D body;
+
+	private Vector3 directionSouris;
+
+	private List<GameObject> listeTir;
 
 	[SerializeField]
     private float jumpForce = 5500.0f;
@@ -31,10 +34,13 @@ public class PlayerScript : NetworkBehaviour
 
 	private bool jump;
 
+	private WeaponV2Script arme;
+
     // Le début des méthodes
     void Start()
 	{
 		body = GetComponent<Rigidbody2D> ();
+		arme = GetComponent<WeaponV2Script>();
     }
 
     // Update is called once per frame
@@ -47,19 +53,9 @@ public class PlayerScript : NetworkBehaviour
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
-		if (shoot) {
-			CmdInputTir ();
-		}
+		CmdInputTir ();
 
 		mouvements ();
-    }
-
-    private Vector3 CalculDirection(Vector3 direction)
-    {
-        float longueur = Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2));
-        float x = direction.x / longueur;
-        float y = direction.y / longueur;
-        return new Vector3(x, y, 0);
     }
 
 	private void getInput() {
@@ -93,36 +89,14 @@ public class PlayerScript : NetworkBehaviour
 
 	[Command]
 	public void CmdInputTir() {
-			WeaponScript weapon = GetComponent<WeaponScript>();
-			ShotgunScript shot = GetComponent<ShotgunScript>();
-			Vector3 shootDirection;
-
-			shootDirection = Input.mousePosition;
-			shootDirection.z = 0.0f;
-			shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-			shootDirection = shootDirection - transform.position;
-			shootDirection = CalculDirection(shootDirection);
-
-			if (weapon.enabled)
-			{
-				weapon.attack(false, shootDirection);
+		if (shoot && arme.isCooldownCooled()) {
+			directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			listeTir = arme.attaque (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
+			foreach (GameObject elemTir in listeTir) {
+				Debug.Log (elemTir.ToString());
+				NetworkServer.Spawn (elemTir);
 			}
-			else if (GetComponent<ShotgunScript>().enabled)
-			{
-				if (nbTirs != 0)
-				{
-					shot.CmdAttack(false, shootDirection);
-					nbTirs -= 1;
-				}
-				else
-				{
-					shot.enabled = false;
-					weapon.enabled = true;
-					weapon.attack(false, shootDirection);
-				}
-			}
-			// false : le joueur n'est pas un ennemi
-		
+		}
 	}
 
 	public override void OnStartLocalPlayer()

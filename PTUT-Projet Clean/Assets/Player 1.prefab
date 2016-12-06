@@ -49,6 +49,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012747125408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011085338192}
+  m_Layer: 0
+  m_Name: TirSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013836726824
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +113,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011810875010}
   m_RootOrder: 2
+--- !u!4 &4000011085338192
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012747125408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011810875010}
+  m_RootOrder: 3
 --- !u!4 &4000011810875010
 Transform:
   m_ObjectHideFlags: 1
@@ -112,6 +140,7 @@ Transform:
   - {fileID: 4000012329843670}
   - {fileID: 4000012403671842}
   - {fileID: 4000010074579540}
+  - {fileID: 4000011085338192}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012329843670
@@ -259,7 +288,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 4
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -299,13 +328,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011097612230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18ba56d037c0a1e4a8b7beafaab9bc41, type: 3}
+  m_Script: {fileID: 11500000, guid: c8528d2e22811c842a93f2e6020f1942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5500
+  jumpForce: 10000
   maxiSpeed: 7
   groundPoint: {fileID: 4000010074579540}
-  groundRadius: 0.01
+  groundRadius: 0.05
   sol:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -317,11 +346,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011097612230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462e204ad12c71447a58c44f4be590c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 62846c939311f3a4ca70b0bad23acdd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 4000012056002544, guid: b010d4390dd501b4990d616a9162b1a4, type: 2}
-  shootingRate: 0.25
+  ballePrefab: {fileID: 1000012081650540, guid: 1d17a0d6838d232468015f714b86bd38,
+    type: 2}
+  balleSpawn: {fileID: 4000011085338192}
 --- !u!114 &114000011689012684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.09090909
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
