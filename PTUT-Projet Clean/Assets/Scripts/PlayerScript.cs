@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+
 public class PlayerScript : NetworkBehaviour
 {
 	private float speedHor;
@@ -46,38 +47,7 @@ public class PlayerScript : NetworkBehaviour
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
-        if (shoot)
-        {
-            WeaponScript weapon = GetComponent<WeaponScript>();
-            ShotgunScript shot = GetComponent<ShotgunScript>();
-            Vector3 shootDirection;
-
-            shootDirection = Input.mousePosition;
-            shootDirection.z = 0.0f;
-            shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-            shootDirection = shootDirection - transform.position;
-			shootDirection = CalculDirection(shootDirection);
-
-            if (weapon.enabled)
-            {
-                weapon.CmdAttack(false, shootDirection);
-            }
-            else if (GetComponent<ShotgunScript>().enabled)
-            {
-                if (nbTirs != 0)
-                {
-                    shot.CmdAttack(false, shootDirection);
-                    nbTirs -= 1;
-                }
-                else
-                {
-                    shot.enabled = false;
-                    weapon.enabled = true;
-                    weapon.CmdAttack(false, shootDirection);
-                }
-            }
-            // false : le joueur n'est pas un ennemi
-        }
+		CmdInputTir ();
 
 		mouvements ();
     }
@@ -117,6 +87,42 @@ public class PlayerScript : NetworkBehaviour
 			body.AddForce (new Vector2 (0, jumpForce));
 		}
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
+	}
+
+	[Command]
+	public void CmdInputTir() {
+		if (shoot)
+		{
+			WeaponScript weapon = GetComponent<WeaponScript>();
+			ShotgunScript shot = GetComponent<ShotgunScript>();
+			Vector3 shootDirection;
+
+			shootDirection = Input.mousePosition;
+			shootDirection.z = 0.0f;
+			shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+			shootDirection = shootDirection - transform.position;
+			shootDirection = CalculDirection(shootDirection);
+
+			if (weapon.enabled)
+			{
+				weapon.attack(false, shootDirection);
+			}
+			else if (GetComponent<ShotgunScript>().enabled)
+			{
+				if (nbTirs != 0)
+				{
+					shot.CmdAttack(false, shootDirection);
+					nbTirs -= 1;
+				}
+				else
+				{
+					shot.enabled = false;
+					weapon.enabled = true;
+					weapon.attack(false, shootDirection);
+				}
+			}
+			// false : le joueur n'est pas un ennemi
+		}
 	}
 
 	public override void OnStartLocalPlayer()

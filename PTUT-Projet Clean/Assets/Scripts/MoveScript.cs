@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 /// <summary>
 /// Déplace l'objet
 /// </summary>
-public class MoveScript : NetworkBehaviour
+public class MoveScript : MonoBehaviour
 {
     // 1 - Designer variables
 
@@ -28,4 +27,4 @@ public class MoveScript : NetworkBehaviour
           direction.y * speedy);
 		GetComponent<Rigidbody>().velocity = movement;
     }
-    }
+}

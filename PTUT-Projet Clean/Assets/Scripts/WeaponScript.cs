@@ -43,8 +43,7 @@ public class WeaponScript : NetworkBehaviour
     /// </summary>
 	///
 
-	[Command]
-    public void CmdAttack(bool isEnemy, Vector2 curseur)
+    public void attack(bool isEnemy, Vector2 curseur)
     {
         if (CanAttack)
         {
