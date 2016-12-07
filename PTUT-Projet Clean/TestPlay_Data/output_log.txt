@@ -20,129 +20,21 @@ Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay
 Loading C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.323 seconds
+- Completed reload, in  0.442 seconds
 Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\UnityScript.Lang.dll (this message is harmless)
 Platform assembly: C:\Users\Zonthem\Documents\PTUT-S3\PTUT-Projet Clean\TestPlay_Data\Managed\Boo.Lang.dll (this message is harmless)
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+desktop: 1920x1080 60Hz; virtual: 3286x1279 at 0,-511
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 273.207367 ms
+UnloadTime: 40.171986 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.624785 ms
+UnloadTime: 27.524944 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 305.
-Total: 0.568360 ms (FindLiveObjects: 0.074892 ms CreateObjectMapping: 0.034881 ms MarkObjects: 0.444223 ms  DeleteObjects: 0.010772 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.780485 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 275.
-Total: 0.546302 ms (FindLiveObjects: 0.071301 ms CreateObjectMapping: 0.031290 ms MarkObjects: 0.418575 ms  DeleteObjects: 0.023083 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.556562 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 303.
-Total: 0.418062 ms (FindLiveObjects: 0.023083 ms CreateObjectMapping: 0.030264 ms MarkObjects: 0.353942 ms  DeleteObjects: 0.009233 ms)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-tirN(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 331.
+Total: 0.854079 ms (FindLiveObjects: 0.125675 ms CreateObjectMapping: 0.078995 ms MarkObjects: 0.621195 ms  DeleteObjects: 0.018979 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 20e4 -> priority: 1 
+  Thread -> id: 1044 -> priority: 1 

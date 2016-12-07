@@ -53,7 +53,10 @@ public class PlayerV2Script : NetworkBehaviour
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
-		CmdInputTir ();
+		if (shoot && arme.isCooldownCooled ()) {
+			directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			CmdInputTir (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
+		}
 
 		mouvements ();
     }
@@ -86,16 +89,13 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
 	}
-
+		
 	[Command]
-	public void CmdInputTir() {
-		if (shoot && arme.isCooldownCooled()) {
-			directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			listeTir = arme.attaque (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
-			foreach (GameObject elemTir in listeTir) {
-				Debug.Log (elemTir.ToString());
-				NetworkServer.Spawn (elemTir);
-			}
+	public void CmdInputTir(Vector2 v) {
+		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		listeTir = arme.attaque (v);
+		foreach (GameObject elemTir in listeTir) {
+			NetworkServer.Spawn (elemTir);
 		}
 	}
 

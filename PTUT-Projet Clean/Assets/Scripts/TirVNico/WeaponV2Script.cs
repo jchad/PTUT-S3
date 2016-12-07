@@ -19,7 +19,7 @@ public class WeaponV2Script : MonoBehaviour {
 		cooldown = 0.0f;
 		equiped = "handgun";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (cooldown > 0)
