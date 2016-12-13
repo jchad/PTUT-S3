@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public class PlayerV2Script : NetworkBehaviour
 {
+	private Vector3 startPos;
+
 	private float speedHor;
 
 	private bool shoot;
@@ -14,6 +16,11 @@ public class PlayerV2Script : NetworkBehaviour
 	private Vector3 directionSouris;
 
 	private List<GameObject> listeTir;
+
+	public int healthMax = 4;
+
+	[SyncVar]
+	private int currentHealth;
 
 	[SerializeField]
     private float jumpForce = 5500.0f;
@@ -39,10 +46,18 @@ public class PlayerV2Script : NetworkBehaviour
     // Le début des méthodes
     void Start()
 	{
+		if (!isLocalPlayer) {
+			this.gameObject.name = "ennemy";
+		} else {
+			this.gameObject.name = "player";
+		}
 		body = GetComponent<Rigidbody2D> ();
 		arme = GetComponent<WeaponV2Script>();
+		currentHealth = healthMax;
+		startPos = this.transform.position;
+		Debug.Log (Network.player.ipAddress);
     }
-
+		
     // Update is called once per frame
     void FixedUpdate()
 	{
@@ -55,14 +70,14 @@ public class PlayerV2Script : NetworkBehaviour
 
 		if (shoot && arme.isCooldownCooled ()) {
 			directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			CmdInputTir (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
+			InputTir (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
 		}
 
 		mouvements ();
     }
 
 	private void getInput() {
-		shoot = Input.GetButtonDown("Fire1") | Input.GetButtonDown("Fire2");
+		shoot = Input.GetButton("Fire1") | Input.GetButtonDown("Fire2");
 		speedHor = Input.GetAxis("Horizontal");
 		if (Input.GetButton ("Jump")) {
 			jump = true;
@@ -90,10 +105,14 @@ public class PlayerV2Script : NetworkBehaviour
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
 	}
 		
-	[Command]
-	public void CmdInputTir(Vector2 v) {
+	public void InputTir(Vector2 v) {
 		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		listeTir = arme.attaque (v);
+		Cmdspawn (listeTir);
+	}
+
+	[Command]
+	public void Cmdspawn(List<GameObject> tir){
 		foreach (GameObject elemTir in listeTir) {
 			NetworkServer.Spawn (elemTir);
 		}
@@ -103,4 +122,21 @@ public class PlayerV2Script : NetworkBehaviour
 	{
 		GetComponent<MeshRenderer>().material.color = Color.red;
 	}
+		
+	public void takeDommage(int dommage){
+
+		if (!isServer) {
+			return;
+		}
+		currentHealth -= dommage;
+		if (currentHealth <= 0) {
+			RpcRespawn ();
+		}
+	}
+
+	[ClientRpc]
+	public void RpcRespawn(){
+		transform.position = startPos;
+		currentHealth = healthMax;
+	} 
 }

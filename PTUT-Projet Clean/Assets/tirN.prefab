@@ -25,6 +25,7 @@ GameObject:
   - 58: {fileID: 58000013785261584}
   - 114: {fileID: 114000012738085984}
   - 114: {fileID: 114000013930568144}
+  - 114: {fileID: 114000011768854152}
   m_Layer: 0
   m_Name: tirN
   m_TagString: Untagged
@@ -89,7 +90,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012081650540}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -112,6 +113,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114000011768854152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012081650540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599b5efd8fa183d4d90db650c12b62e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  isEnemyShot: 0
 --- !u!114 &114000012738085984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,22 +140,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 29
+    i1: 23
+    i2: 160
+    i3: 214
+    i4: 131
+    i5: 141
+    i6: 35
+    i7: 36
+    i8: 104
+    i9: 1
+    i10: 95
+    i11: 113
+    i12: 75
+    i13: 134
+    i14: 189
+    i15: 56
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114000013930568144

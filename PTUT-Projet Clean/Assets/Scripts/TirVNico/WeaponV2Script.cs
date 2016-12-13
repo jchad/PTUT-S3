@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
-public class WeaponV2Script : MonoBehaviour {
+public class WeaponV2Script : NetworkBehaviour {
 
+	[SyncVar]
 	private float cooldown;
 
 	private string equiped;
