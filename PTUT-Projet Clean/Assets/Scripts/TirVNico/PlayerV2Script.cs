@@ -15,6 +15,10 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private Vector3 directionSouris;
 
+	private Vector2 directionSouris2d;
+
+	private bool isRightOriented;
+
 	private List<GameObject> listeTir;
 
 	public int healthMax = 4;
@@ -55,6 +59,7 @@ public class PlayerV2Script : NetworkBehaviour
 		arme = GetComponent<WeaponV2Script>();
 		currentHealth = healthMax;
 		startPos = this.transform.position;
+		isRightOriented = true;
 		Debug.Log (Network.player.ipAddress);
     }
 		
@@ -68,9 +73,11 @@ public class PlayerV2Script : NetworkBehaviour
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
+		orientation ();
+
 		if (shoot && arme.isCooldownCooled ()) {
-			directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			InputTir (new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y));
+			
+			InputTir (directionSouris2d);
 		}
 
 		mouvements ();
@@ -131,6 +138,15 @@ public class PlayerV2Script : NetworkBehaviour
 		currentHealth -= dommage;
 		if (currentHealth <= 0) {
 			RpcRespawn ();
+		}
+	}
+
+	private void orientation() {
+		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		directionSouris2d = new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y);
+		if ((Mathf.Abs (directionSouris2d.x) == directionSouris2d.x) != isRightOriented) {
+			transform.Rotate (0, 180, 0);
+			isRightOriented = !isRightOriented;
 		}
 	}
 
