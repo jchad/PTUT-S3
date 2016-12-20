@@ -30,22 +30,21 @@ public class WeaponV2Script : NetworkBehaviour {
 			cooldown = 0.0f;
 	}
 
-	public List<GameObject> attaque (Vector2 aimTo) {
-		List<GameObject> lstTir = new List<GameObject>();
+	public void attaque (Vector2 aimTo) {
 		switch (equiped) {
 		case "handgun":
 			cooldown = 0.5f;
-			lstTir.Add(spawnTir (aimTo));
+			CmdSpawnTir (aimTo);
 			break;
 		}
-		return lstTir;
 	}
 
-	GameObject spawnTir (Vector2 aimTo) {
+	[Command]
+	public void CmdSpawnTir(Vector2 aimTo){
 		var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
 		Destroy (tir, 2.0f);
 		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 35;
-		return tir;
+		NetworkServer.Spawn (tir);
 	}
 
 	public bool isCooldownCooled() {

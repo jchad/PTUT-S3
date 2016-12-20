@@ -58,7 +58,7 @@ public class PlayerV2Script : NetworkBehaviour
 		body = GetComponent<Rigidbody2D> ();
 		arme = GetComponent<WeaponV2Script>();
 		currentHealth = healthMax;
-		startPos = this.transform.position;
+		startPos = transform.position;
 		isRightOriented = true;
 		Debug.Log (Network.player.ipAddress);
     }
@@ -77,14 +77,14 @@ public class PlayerV2Script : NetworkBehaviour
 
 		if (shoot && arme.isCooldownCooled ()) {
 			
-			InputTir (directionSouris2d);
+			InputTir ();
 		}
 
 		mouvements ();
     }
 
 	private void getInput() {
-		shoot = Input.GetButton("Fire1") | Input.GetButtonDown("Fire2");
+		shoot = Input.GetButtonDown("Fire2") | Input.GetButton("Fire1");
 		speedHor = Input.GetAxis("Horizontal");
 		if (Input.GetButton ("Jump")) {
 			jump = true;
@@ -112,17 +112,9 @@ public class PlayerV2Script : NetworkBehaviour
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
 	}
 		
-	public void InputTir(Vector2 v) {
+	public void InputTir() {
 		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		listeTir = arme.attaque (v);
-		Cmdspawn (listeTir);
-	}
-
-	[Command]
-	public void Cmdspawn(List<GameObject> tir){
-		foreach (GameObject elemTir in listeTir) {
-			NetworkServer.Spawn (elemTir);
-		}
+		arme.attaque (directionSouris2d);
 	}
 
 	public override void OnStartLocalPlayer()
