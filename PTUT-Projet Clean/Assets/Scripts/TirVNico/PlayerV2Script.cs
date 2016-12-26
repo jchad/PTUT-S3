@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 
 public class PlayerV2Script : NetworkBehaviour
-{
+{ 
+    [SyncVar]
 	private Vector3 startPos;
 
 	private float speedHor;
@@ -17,6 +18,7 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private Vector2 directionSouris2d;
 
+    [SyncVar]
 	private bool isRightOriented;
 
 	private List<GameObject> listeTir;
@@ -47,20 +49,27 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private WeaponV2Script arme;
 
+    private GameObject cam = null;
     // Le début des méthodes
     void Start()
 	{
 		if (!isLocalPlayer) {
 			this.gameObject.name = "ennemy";
 		} else {
-			this.gameObject.name = "player";
+			this.gameObject.name = "Player";
+            cam = GameObject.FindGameObjectWithTag("MainCamera");
 		}
 		body = GetComponent<Rigidbody2D> ();
 		arme = GetComponent<WeaponV2Script>();
 		currentHealth = healthMax;
 		startPos = transform.position;
-		isRightOriented = true;
-		Debug.Log (Network.player.ipAddress);
+
+        directionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        directionSouris2d = new Vector2(directionSouris.x - transform.position.x, directionSouris.y - transform.position.y);
+        isRightOriented = (Mathf.Abs(directionSouris2d.x) == directionSouris2d.x);
+        Debug.Log(isRightOriented);
+
+        Debug.Log (Network.player.ipAddress);
     }
 		
     // Update is called once per frame
@@ -110,7 +119,9 @@ public class PlayerV2Script : NetworkBehaviour
 			body.AddForce (new Vector2 (0, jumpForce));
 		}
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
-	}
+       cam.transform.position = transform.position + new Vector3(0, 0, -2);
+          
+    }
 		
 	public void InputTir() {
 		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -121,15 +132,15 @@ public class PlayerV2Script : NetworkBehaviour
 	{
 		GetComponent<MeshRenderer>().material.color = Color.red;
 	}
-		
-	public void takeDommage(int dommage){
 
-		if (!isServer) {
-			return;
-		}
+    public void takeDommage(int dommage){
+
+        if (!isServer) return;
+
 		currentHealth -= dommage;
 		if (currentHealth <= 0) {
-			RpcRespawn ();
+            currentHealth = healthMax;
+            RpcRespawn ();
 		}
 	}
 
@@ -142,9 +153,12 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 	}
 
-	[ClientRpc]
-	public void RpcRespawn(){
-		transform.position = startPos;
-		currentHealth = healthMax;
-	} 
+    [ClientRpc]
+    public void RpcRespawn()
+    {
+        if (isLocalPlayer)
+        {
+            transform.position = startPos;
+        }
+    } 
 }

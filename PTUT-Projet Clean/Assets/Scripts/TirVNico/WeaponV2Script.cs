@@ -43,7 +43,7 @@ public class WeaponV2Script : NetworkBehaviour {
 	public void CmdSpawnTir(Vector2 aimTo){
 		var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
 		Destroy (tir, 2.0f);
-		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 35;
+		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 20;
 		NetworkServer.Spawn (tir);
 	}
 
