@@ -47,7 +47,9 @@ public class PlayerScript : NetworkBehaviour
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
-		CmdInputTir ();
+		if (shoot) {
+			CmdInputTir ();
+		}
 
 		mouvements ();
     }
@@ -91,8 +93,6 @@ public class PlayerScript : NetworkBehaviour
 
 	[Command]
 	public void CmdInputTir() {
-		if (shoot)
-		{
 			WeaponScript weapon = GetComponent<WeaponScript>();
 			ShotgunScript shot = GetComponent<ShotgunScript>();
 			Vector3 shootDirection;
@@ -122,7 +122,7 @@ public class PlayerScript : NetworkBehaviour
 				}
 			}
 			// false : le joueur n'est pas un ennemi
-		}
+		
 	}
 
 	public override void OnStartLocalPlayer()

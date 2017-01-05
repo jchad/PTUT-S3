@@ -115,7 +115,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1651465463}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1651465465
 Behaviour:
   m_ObjectHideFlags: 0
@@ -251,12 +251,12 @@ Prefab:
         type: 2}
       propertyPath: m_SpawnPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1000012673103506, guid: b010d4390dd501b4990d616a9162b1a4,
+      objectReference: {fileID: 1000012081650540, guid: 1d17a0d6838d232468015f714b86bd38,
         type: 2}
     - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
         type: 2}
       propertyPath: m_PlayerSpawnMethod
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000012734053274, guid: 2032627957d7c414385044ec1b21a731,
         type: 2}
