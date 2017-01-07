@@ -73,8 +73,13 @@ public class PlayerV2Script : NetworkBehaviour
 
         Debug.Log (Network.player.ipAddress);
     }
-		
-    // Update is called once per frame
+
+    void OnPlayerDisconnected(NetworkPlayer player)
+    {
+        Network.RemoveRPCs(player);
+        Network.DestroyPlayerObjects(player);
+    }
+
     void FixedUpdate()
 	{
 		if (!isLocalPlayer) {
@@ -136,11 +141,9 @@ public class PlayerV2Script : NetworkBehaviour
 	}
 
     public void takeDommage(int dommage){
-
-        if (!isServer) return;
-
 		currentHealth -= dommage;
-		if (currentHealth <= 0) {
+        Debug.Log(currentHealth);
+        if (currentHealth <= 0) {
             currentHealth = healthMax;
             RpcRespawn ();
 		}
@@ -154,15 +157,22 @@ public class PlayerV2Script : NetworkBehaviour
 			transform.Rotate (0, 180, 0);
 			isRightOriented = !isRightOriented;
 		}
-		Debug.Log (isRightOriented);
 	}
 
     [ClientRpc]
     public void RpcRespawn()
     {
-        if (isLocalPlayer)
+        if (isServer)
         {
             transform.position = startPos;
         }
-    } 
-}
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("test");
+        if (string.Equals(collision.gameObject.name, "DeathZone")){
+            transform.position = startPos;
+        }
+    }
+    }

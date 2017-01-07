@@ -4,17 +4,17 @@ using UnityEngine.Networking;
 [SelectionBase]
 public class VoxelGrid : NetworkBehaviour {
 
-	public int resolution=50;
-	public GameObject SpawnPrefab;
-	public GameObject platformPrefab;
-	int[][] m;
-	private bool[] voxels;
-	private Material[] voxelMaterials;
-	private float size;
-	public void Awake () {
-		size = 1f / resolution;
+    public int resolution = 50;
+    public GameObject SpawnPrefab;
+    public GameObject platformPrefab;
+    int[][] m;
+    private bool[] voxels;
+    private Material[] voxelMaterials;
+    private float size;
     
-		voxels = new bool[resolution * resolution];
+	public override void OnStartServer () {
+		size = 1f / resolution;
+        voxels = new bool[resolution * resolution];
 		voxelMaterials = new Material[voxels.Length];
 		GenMap generator = new GenMap ();
 		m = generator.iniMat(resolution);

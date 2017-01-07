@@ -44,6 +44,7 @@ public class WeaponV2Script : NetworkBehaviour {
 		var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
 		Destroy (tir, 2.0f);
 		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 20;
+        tir.GetComponent<ShotScript>().joueur = gameObject.GetComponent<NetworkIdentity>().assetId;
 		NetworkServer.Spawn (tir);
 	}
 

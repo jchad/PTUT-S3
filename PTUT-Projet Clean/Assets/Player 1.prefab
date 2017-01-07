@@ -27,7 +27,6 @@ GameObject:
   - 114: {fileID: 114000012975108850}
   - 114: {fileID: 114000010483236702}
   - 114: {fileID: 114000011143696904}
-  - 114: {fileID: 114000010962108358}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -408,19 +407,6 @@ MonoBehaviour:
   sol:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114000010962108358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011097612230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e36f723b68a04185a2f0b5e591f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 5
-  isEnemy: 1
 --- !u!114 &114000011143696904
 MonoBehaviour:
   m_ObjectHideFlags: 1

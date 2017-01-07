@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000012738085984}
   - 114: {fileID: 114000013930568144}
   - 114: {fileID: 114000011768854152}
+  - 148: {fileID: 148000013144020462}
   m_Layer: 0
   m_Name: tirN
   m_TagString: Untagged
@@ -126,6 +127,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   isEnemyShot: 0
+  joueur:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
 --- !u!114 &114000012738085984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,3 +196,15 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!148 &148000013144020462
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012081650540}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 4000012832507096}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0

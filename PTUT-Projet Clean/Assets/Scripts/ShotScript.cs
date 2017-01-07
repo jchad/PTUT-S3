@@ -6,6 +6,7 @@ public class ShotScript : NetworkBehaviour {
 
 	public int damage = 1;
 	public bool isEnemyShot = false;
+    public NetworkHash128 joueur;
 	// Use this for initialization
 	void Start () {
 		Destroy (gameObject, 1);
@@ -13,9 +14,11 @@ public class ShotScript : NetworkBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		var hit = collision.gameObject;
-		if (string.Compare (hit.name, "ennemy") == 0) {
+        if (!NetworkHash128.Equals(joueur, collision.gameObject.GetComponent < NetworkIdentity>().assetId)) {
+            
 			var health = hit.GetComponent<PlayerV2Script> ();
-			if (health != null) {
+            if (health != null) {
+                Debug.Log("wtf");
 				health.takeDommage (damage);
 			}
 		}
@@ -28,8 +31,7 @@ public class ShotScript : NetworkBehaviour {
 			
 			}
 		}
-		if (string.Compare (hit.name, "player") != 0) {
-			Destroy (gameObject);
-		}
+        Network.Destroy(gameObject);
+
 		}
 }
