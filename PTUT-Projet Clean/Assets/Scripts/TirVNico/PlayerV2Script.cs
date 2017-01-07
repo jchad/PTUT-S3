@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 
 public class PlayerV2Script : NetworkBehaviour
 { 
+	private NetworkStartPosition[] spawnPoints;
     [SyncVar]
 	private Vector3 startPos;
 
@@ -53,6 +54,8 @@ public class PlayerV2Script : NetworkBehaviour
     // Le début des méthodes
     void Start()
 	{
+		
+		spawnPoints = NetworkManager.FindObjectsOfType<NetworkStartPosition>();
 		if (!isLocalPlayer) {
 			this.gameObject.name = "ennemy";
 		} else {
@@ -142,7 +145,7 @@ public class PlayerV2Script : NetworkBehaviour
 
     public void takeDommage(int dommage){
 		currentHealth -= dommage;
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
         if (currentHealth <= 0) {
             currentHealth = healthMax;
             RpcRespawn ();
@@ -162,17 +165,25 @@ public class PlayerV2Script : NetworkBehaviour
     [ClientRpc]
     public void RpcRespawn()
     {
-        if (isServer)
-        {
-            transform.position = startPos;
-        }
+		spawnPoints = NetworkManager.FindObjectsOfType<NetworkStartPosition>();
+		// Set the spawn point to origin as a default value
+		Vector3 spawnPoint = Vector3.zero;
+	
+		// If there is a spawn point array and the array is not empty, pick one at random
+		if (spawnPoints != null && spawnPoints.Length > 0)
+		{
+			spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+		}
+		// Set the player’s position to the chosen spawn point
+		transform.position = spawnPoint;
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("test");
+        //Debug.Log("test");
         if (string.Equals(collision.gameObject.name, "DeathZone")){
-            transform.position = startPos;
+			takeDommage (500);
         }
     }
     }
