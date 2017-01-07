@@ -162,7 +162,6 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 	}
 
-    [ClientRpc]
     public void RpcRespawn()
     {
 		spawnPoints = NetworkManager.FindObjectsOfType<NetworkStartPosition>();
