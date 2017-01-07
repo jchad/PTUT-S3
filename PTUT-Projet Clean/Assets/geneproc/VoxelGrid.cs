@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 [SelectionBase]
-public class VoxelGrid : MonoBehaviour {
+public class VoxelGrid : NetworkBehaviour {
 
 	public int resolution=50;
 	public GameObject SpawnPrefab;
@@ -12,6 +13,7 @@ public class VoxelGrid : MonoBehaviour {
 	private float size;
 	public void Awake () {
 		size = 1f / resolution;
+    
 		voxels = new bool[resolution * resolution];
 		voxelMaterials = new Material[voxels.Length];
 		GenMap generator = new GenMap ();
@@ -40,6 +42,7 @@ public class VoxelGrid : MonoBehaviour {
 		GameObject o = Instantiate(platformPrefab) as GameObject;
 		o.transform.parent = transform;
 		o.transform.localPosition = new Vector3((x+0.5f),(y+0.5f));
+        NetworkServer.Spawn(o);
 		//o.transform.localScale = Vector3.one * size;
 		//voxelMaterials[i] = o.GetComponent<SpriteRenderer>().material;
 	}
@@ -48,5 +51,6 @@ public class VoxelGrid : MonoBehaviour {
 		GameObject o = Instantiate(SpawnPrefab) as GameObject;
 		o.transform.parent = transform;
 		o.transform.localPosition = new Vector3((x+0.5f),(y+0.5f));
+        NetworkServer.Spawn(o);
 	}
 }

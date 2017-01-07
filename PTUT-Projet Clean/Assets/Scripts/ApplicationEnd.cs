@@ -23,11 +23,11 @@ public class ApplicationEnd : MonoBehaviour
 
 	void OnApplicationQuit()
 	{ 
-		string url = logoutURL + "nick=" WWW.EscapeURL(nick) + "&hash=" + hash; /*nick a remplacer par le bon maillon de la liste
+		/*string url = logoutURL + "nick=" WWW.EscapeURL(nick) + "&hash=" + hash; nick a remplacer par le bon maillon de la liste
 		WWW hs_post = new WWW(url);
 		yield return hs_post;
 		if(hs_post.error!=null){
 			print("Il a a eu une erreur pendant la deconnexion : " + hs_post.error);
 		}
-	}
+	*/}
 }

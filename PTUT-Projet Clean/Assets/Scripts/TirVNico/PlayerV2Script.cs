@@ -70,7 +70,7 @@ public class PlayerV2Script : NetworkBehaviour
 		if (!isRightOriented) {
 			transform.Rotate (0, 180, 0);
 		}
-        Debug.Log(isRightOriented);
+
         Debug.Log (Network.player.ipAddress);
     }
 		

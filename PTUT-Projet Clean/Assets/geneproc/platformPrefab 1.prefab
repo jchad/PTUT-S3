@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000013774288106}
   - 61: {fileID: 61000013218536628}
   - 114: {fileID: 114000011214574462}
+  - 114: {fileID: 114000012068828890}
   m_Layer: 0
   m_Name: platformPrefab 1
   m_TagString: Untagged
@@ -68,6 +69,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxlife: 1
+--- !u!114 &114000012068828890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012908828764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 164
+    i1: 170
+    i2: 28
+    i3: 31
+    i4: 36
+    i5: 63
+    i6: 47
+    i7: 212
+    i8: 168
+    i9: 118
+    i10: 246
+    i11: 62
+    i12: 8
+    i13: 102
+    i14: 52
+    i15: 167
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!212 &212000013774288106
 SpriteRenderer:
   m_ObjectHideFlags: 1
