@@ -41,6 +41,10 @@ public class WeaponV2Script : NetworkBehaviour {
 
 	[Command]
 	public void CmdSpawnTir(Vector2 aimTo){
+		int orientation = -1;
+		if (gameObject.GetComponent<PlayerV2Script>().isRightOriented){
+			orientation = 1
+				;}
 		var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
 		Destroy (tir, 2.0f);
 		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 20;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Networking;
+using UnityEngine.Networking; 
 
 public class PlayerV2Script : NetworkBehaviour
 { 
@@ -20,14 +20,14 @@ public class PlayerV2Script : NetworkBehaviour
 	private Vector2 directionSouris2d;
 
     [SyncVar]
-	private bool isRightOriented;
+	public bool isRightOriented;
 
 	private List<GameObject> listeTir;
 
 	public int healthMax = 4;
 
 	[SyncVar]
-	private int currentHealth;
+	public int currentHealth;
 
 	[SerializeField]
     private float jumpForce = 5500.0f;
@@ -50,7 +50,7 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private WeaponV2Script arme;
 
-    private GameObject cam = null;
+	private GameObject cam = null;
     // Le début des méthodes
     void Start()
 	{
@@ -66,8 +66,7 @@ public class PlayerV2Script : NetworkBehaviour
 		arme = GetComponent<WeaponV2Script>();
 		currentHealth = healthMax;
 		startPos = transform.position;
-
-        directionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		directionSouris = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         directionSouris2d = new Vector2(directionSouris.x - transform.position.x, directionSouris.y - transform.position.y);
 		isRightOriented = (Mathf.Abs(directionSouris2d.x) == directionSouris2d.x);
 		if (!isRightOriented) {
@@ -87,6 +86,10 @@ public class PlayerV2Script : NetworkBehaviour
 	{
 		if (!isLocalPlayer) {
 			return;
+		}
+		if (currentHealth <= 0) {
+			currentHealth = healthMax;
+			RpcRespawn ();
 		}
 		isGrounded = IsGrounded ();
 		getInput ();
@@ -142,8 +145,10 @@ public class PlayerV2Script : NetworkBehaviour
 	{
 		GetComponent<MeshRenderer>().material.color = Color.red;
 	}
-
-    public void takeDommage(int dommage){
+    public void RpcTakedommage(int dommage){
+		if (!isServer) {
+			return;
+		}
 		currentHealth -= dommage;
         //Debug.Log(currentHealth);
         if (currentHealth <= 0) {
@@ -161,7 +166,7 @@ public class PlayerV2Script : NetworkBehaviour
 			isRightOriented = !isRightOriented;
 		}
 	}
-
+	[ClientRpc]
     public void RpcRespawn()
     {
 		spawnPoints = NetworkManager.FindObjectsOfType<NetworkStartPosition>();
@@ -180,9 +185,11 @@ public class PlayerV2Script : NetworkBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("test");
+		Debug.Log(collision.gameObject.name);
+
         if (string.Equals(collision.gameObject.name, "DeathZone")){
-			takeDommage (500);
+			RpcTakedommage (500);
         }
+
     }
-    }
+}

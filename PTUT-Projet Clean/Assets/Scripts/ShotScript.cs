@@ -1,37 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
+using System.Collections.Generic;
+using UnityEngine.Networking; 
 
 public class ShotScript : NetworkBehaviour {
-
 	public int damage = 1;
 	public bool isEnemyShot = false;
     public NetworkHash128 joueur;
 	// Use this for initialization
 	void Start () {
+		if (isServer) {
+			Debug.Log ("server");
+		}
+		if (isLocalPlayer){
+			Debug.Log ("joueur");
+		}
 		Destroy (gameObject, 1);
 	}
-
 	void OnCollisionEnter2D(Collision2D collision){
 		var hit = collision.gameObject;
-        if (!NetworkHash128.Equals(joueur, collision.gameObject.GetComponent < NetworkIdentity>().assetId)) {
-            
-			var health = hit.GetComponent<PlayerV2Script> ();
-            if (health != null) {
-                Debug.Log("wtf");
-				health.takeDommage (damage);
-			}
-		}
+		Debug.Log (collision.gameObject.name);
 		if (string.Compare (hit.name, "platformPrefab 1(Clone)")==0) {
 			var scr = hit.GetComponent<Platform> ();
-			Debug.Log ("Mur");
 			if (scr != null) {
-				Debug.Log ("Mur");
 				scr.gethit (damage);
-			
 			}
+		}
+		if ((string.Equals(collision.gameObject.name,"Player"))||(string.Equals(collision.gameObject.name,"ennemy"))){
+			hit.GetComponent<PlayerV2Script>().RpcTakedommage(1);
 		}
         Network.Destroy(gameObject);
 
 		}
+		
 }

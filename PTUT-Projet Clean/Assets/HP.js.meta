@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf8a20fc465ebc5449b4dc2e6b2b64c2
+timeCreated: 1484048334
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - HPText: {fileID: 2800000, guid: fad11ad853a05674ab533fab6d7d0f10, type: 3}
+  - HPText2: {fileID: 2800000, guid: fad11ad853a05674ab533fab6d7d0f10, type: 3}
+  - HPText3: {fileID: 2800000, guid: fad11ad853a05674ab533fab6d7d0f10, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

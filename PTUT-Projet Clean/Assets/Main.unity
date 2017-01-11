@@ -280,6 +280,11 @@ Prefab:
       propertyPath: m_CustomConfig
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010032425208, guid: 2032627957d7c414385044ec1b21a731,
+        type: 2}
+      propertyPath: m_GlobalConfig.m_ReactorModel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2032627957d7c414385044ec1b21a731, type: 2}
   m_IsPrefabParent: 0
