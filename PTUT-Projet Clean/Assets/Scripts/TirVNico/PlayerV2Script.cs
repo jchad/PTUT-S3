@@ -51,6 +51,9 @@ public class PlayerV2Script : NetworkBehaviour
 	private WeaponV2Script arme;
 
 	private GameObject cam = null;
+
+    private bool doubleJump = false;
+    private bool isDoubleJump = false;
     // Le début des méthodes
     void Start()
 	{
@@ -108,7 +111,7 @@ public class PlayerV2Script : NetworkBehaviour
 	private void getInput() {
 		shoot = Input.GetButtonDown("Fire2") | Input.GetButton("Fire1");
 		speedHor = Input.GetAxis("Horizontal");
-		if (Input.GetButton ("Jump")) {
+		if (Input.GetButtonDown ("Jump")) {
 			jump = true;
 		}
 	}
@@ -119,7 +122,9 @@ public class PlayerV2Script : NetworkBehaviour
 			for (int i = 0; i < colliders.Length; i++) {
 				if (colliders [i].gameObject != gameObject) {
 					jump = false;
+                    isDoubleJump = false;
 					return true;
+                    
 				}
 			}
 		}
@@ -130,7 +135,15 @@ public class PlayerV2Script : NetworkBehaviour
 		if (isGrounded && jump) {
 			isGrounded = false;
 			body.AddForce (new Vector2 (0, jumpForce));
+            jump = false;
 		}
+
+        else if (!isGrounded && doubleJump && !isDoubleJump && jump)
+        {
+            isDoubleJump = true;
+            body.AddForce(new Vector2(0, jumpForce));
+        }
+
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
        cam.transform.position = transform.position + new Vector3(0, 0, -2);
           
@@ -180,16 +193,23 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 		// Set the player’s position to the chosen spawn point
 		transform.position = spawnPoint;
+        doubleJump = false;
 
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-		Debug.Log(collision.gameObject.name);
 
         if (string.Equals(collision.gameObject.name, "DeathZone")){
 			RpcTakedommage (500);
         }
+        
+        else if (string.Equals(collision.gameObject.name, "test"))
+        {
+            doubleJump = true;
+            Network.Destroy(collision.gameObject);
+        }
+       
 
     }
 }

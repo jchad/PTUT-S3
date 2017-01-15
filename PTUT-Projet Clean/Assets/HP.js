@@ -21,10 +21,10 @@ function OnGUI ()
     }
 }
 
-function Update () {
+/*function Update () {
     HPLenght = 100;
     if(Input.GetKeyDown("t"))
     {
         actHP -= 1;
     }
-}
+}*/
