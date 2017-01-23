@@ -20,6 +20,10 @@ public class HP : MonoBehaviour
         o = GameObject.FindGameObjectsWithTag("Player");
         
     }
+	void Update(){
+		o = GameObject.FindGameObjectsWithTag ("Player");
+	}
+		
     private void OnGUI()
     {
       
