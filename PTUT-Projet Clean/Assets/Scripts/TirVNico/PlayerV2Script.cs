@@ -52,8 +52,8 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private GameObject cam = null;
 
-    private bool doubleJump = false;
-    private bool isDoubleJump = false;
+	private bool doubleJump = true;
+	private bool isDoubleJump = false;
     // Le début des méthodes
     void Start()
 	{
@@ -141,6 +141,7 @@ public class PlayerV2Script : NetworkBehaviour
         else if (!isGrounded && doubleJump && !isDoubleJump && jump)
         {
             isDoubleJump = true;
+			body.velocity = new Vector3 (0, 0, 0);
             body.AddForce(new Vector2(0, jumpForce));
         }
 
