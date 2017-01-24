@@ -19,7 +19,6 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private Vector2 directionSouris2d;
 
-    [SyncVar]
 	public bool isRightOriented;
 
 	private List<GameObject> listeTir;
@@ -176,8 +175,19 @@ public class PlayerV2Script : NetworkBehaviour
 		directionSouris =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		directionSouris2d = new Vector2 (directionSouris.x - transform.position.x, directionSouris.y - transform.position.y);
 		if ((Mathf.Abs (directionSouris2d.x) == directionSouris2d.x) != isRightOriented) {
-			transform.Rotate (0, 180, 0);
+			CmdTourne(this.gameObject);
 			isRightOriented = !isRightOriented;
+		}
+	}
+	[Command] private void CmdTourne (GameObject o){
+		Debug.Log (" le serveur a tourné");
+		o.transform.Rotate (0, 180, 0);
+		RpcTourne (o);
+	}
+	[ClientRpc] private void RpcTourne(GameObject o){
+		if (!(isServer)){
+			Debug.Log ("le client a tourné");
+			o.transform.Rotate (0, 180, 0);
 		}
 	}
 	[ClientRpc]
@@ -194,7 +204,7 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 		// Set the player’s position to the chosen spawn point
 		transform.position = spawnPoint;
-        doubleJump = false;
+        //doubleJump = false;
 
     }
 
