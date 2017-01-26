@@ -8,7 +8,11 @@ public class WeaponV2Script : NetworkBehaviour {
 	[SyncVar]
 	private float cooldown;
 
+	[SyncVar]
 	private string equiped;
+
+	[SyncVar]
+	private int nbtir = 0;
 
 	[SerializeField]
 	private GameObject ballePrefab;
@@ -36,21 +40,58 @@ public class WeaponV2Script : NetworkBehaviour {
 			cooldown = 0.5f;
 			CmdSpawnTir (aimTo);
 			break;
+		case "shotgun":
+			cooldown = 0.8f;
+			CmdSpawnTir (aimTo);
+			break;
 		}
 	}
 
 	[Command]
 	public void CmdSpawnTir(Vector2 aimTo){
-		int orientation = -1;
+		/*int orientation = -1;
 		if (gameObject.GetComponent<PlayerV2Script>().isRightOriented){
 			orientation = 1
-				;}
-		var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
-		Destroy (tir, 2.0f);
-		tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection(aimTo) * 20;
-        tir.GetComponent<ShotScript>().joueur = gameObject.GetComponent<NetworkIdentity>().assetId;
-		NetworkServer.Spawn (tir);
-	}
+				;}*/
+		switch (equiped) {
+		case "handgun":
+			var tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
+			Destroy (tir, 2.0f);
+			tir.GetComponent<Rigidbody2D> ().velocity = CalculDirection (aimTo) * 20;
+			tir.GetComponent<ShotScript> ().joueur = gameObject.GetComponent<NetworkIdentity> ().assetId;
+			Physics2D.IgnoreCollision (tir.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
+			NetworkServer.Spawn (tir);
+			break;
+		case "shotgun":
+			//Creation de 6 objets
+			GameObject[] list = new GameObject[6];
+			for (int i = 0; i < 6; i++) {
+				tir = (GameObject)Instantiate (ballePrefab, balleSpawn.position, balleSpawn.rotation);
+				list [i] = tir;
+				Destroy (tir, 2.0f);
+				Vector2 dir = CalculDirection (aimTo) * 20;
+				float x = Random.Range (-3.0f, 3.0f);
+				float y = Random.Range (-3.0f, 3.0f);
+				dir = new Vector2 (dir.x + x, dir.y + y);
+				Debug.Log (i);
+				for (int j = 0; j < i; j++) {
+					Physics2D.IgnoreCollision (tir.GetComponent<Collider2D> (), list [j].GetComponent<Collider2D> ());
+				}
+				Physics2D.IgnoreCollision (tir.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
+				tir.GetComponent<Rigidbody2D> ().velocity = dir;
+				tir.GetComponent<ShotScript> ().joueur = gameObject.GetComponent<NetworkIdentity> ().assetId;
+				NetworkServer.Spawn (tir);
+
+			}
+			nbtir--;
+			if (nbtir == 0) {
+				equiped = "handgun";
+			}
+		
+			break;
+		}
+	}	
+
 
 	public bool isCooldownCooled() {
 		return cooldown==0;
@@ -62,5 +103,15 @@ public class WeaponV2Script : NetworkBehaviour {
 		float x = direction.x / longueur;
 		float y = direction.y / longueur;
 		return new Vector2(x, y);
+	}
+
+	[Command]
+	public void CmdSetArme(string arme){
+		equiped = arme;
+	}
+
+	[Command]
+	public void CmdSetNbTir(int nb){
+		nbtir = nb;
 	}
 }

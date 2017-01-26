@@ -80,8 +80,8 @@ public class PlayerV2Script : NetworkBehaviour
 
     void OnPlayerDisconnected(NetworkPlayer player)
     {
-        Network.RemoveRPCs(player);
-        Network.DestroyPlayerObjects(player);
+		Network.DestroyPlayerObjects(player);
+        Network.RemoveRPCs(player);    
     }
 
     void FixedUpdate()
@@ -180,13 +180,11 @@ public class PlayerV2Script : NetworkBehaviour
 		}
 	}
 	[Command] private void CmdTourne (GameObject o){
-		Debug.Log (" le serveur a tourné");
 		o.transform.Rotate (0, 180, 0);
 		RpcTourne (o);
 	}
 	[ClientRpc] private void RpcTourne(GameObject o){
 		if (!(isServer)){
-			Debug.Log ("le client a tourné");
 			o.transform.Rotate (0, 180, 0);
 		}
 	}
@@ -215,9 +213,11 @@ public class PlayerV2Script : NetworkBehaviour
 			RpcTakedommage (500);
         }
         
-        else if (string.Equals(collision.gameObject.name, "test"))
+        else if (string.Equals(collision.gameObject.name, "Shotgun"))
         {
-            doubleJump = true;
+			
+			arme.CmdSetArme ("shotgun");
+			arme.CmdSetNbTir (5);
             Network.Destroy(collision.gameObject);
         }
        
