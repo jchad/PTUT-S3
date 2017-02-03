@@ -3,16 +3,16 @@ using System.Collections;
 
 public class viseur : MonoBehaviour {
 
-    Vector2 pos;
+	[SerializeField]
+	private Texture2D curseur;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = pos;
+	[SerializeField]
+	private CursorMode cMode = CursorMode.Auto;
+
+	[SerializeField]
+	private Vector2 hotSpot = Vector2.zero;
+
+	void Start() {
+		Cursor.SetCursor (curseur, hotSpot, cMode);
 	}
 }

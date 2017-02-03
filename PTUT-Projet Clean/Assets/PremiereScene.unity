@@ -161,6 +161,7 @@ GameObject:
   - 81: {fileID: 772258252}
   - 114: {fileID: 772258258}
   - 114: {fileID: 772258257}
+  - 114: {fileID: 772258259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -281,6 +282,20 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &772258259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772258251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7bf31a90d75a2458ef48b928ed75e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curseur: {fileID: 2800000, guid: 15d160c2043912046ba29d80b365514a, type: 3}
+  cMode: 0
+  hotSpot: {x: 5, y: 5}
 --- !u!1 &1189567194
 GameObject:
   m_ObjectHideFlags: 0

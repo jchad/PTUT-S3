@@ -18,7 +18,7 @@ Platform assembly: C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_
 Loading C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.183 seconds
+- Completed reload, in  0.277 seconds
 Platform assembly: C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Zonthem\Documents\Unity\Ptut\PTUT-Projet Clean\test_Data\Managed\UnityScript.Lang.dll (this message is harmless)
@@ -27,18 +27,44 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 452.543274 ms
+UnloadTime: 2.356536 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.016533 ms
+UnloadTime: 0.543224 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 329.
-Total: 0.579644 ms (FindLiveObjects: 0.070788 ms CreateObjectMapping: 0.038984 ms MarkObjects: 0.447300 ms  DeleteObjects: 0.017953 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 324.
+Total: 0.421139 ms (FindLiveObjects: 0.019492 ms CreateObjectMapping: 0.034368 ms MarkObjects: 0.345221 ms  DeleteObjects: 0.007181 ms)
+
+0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerV2Script.OnStartLocalPlayer () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.SetLocalPlayer (Int16 localPlayerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.SetupLocalPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.Networking.NetworkIdentity uv, UnityEngine.Networking.PlayerController newPlayerController) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InternalAddPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.GameObject playerGameObject, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.AddPlayerForConnection (UnityEngine.Networking.NetworkConnection conn, UnityEngine.GameObject player, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayerInternal (UnityEngine.Networking.NetworkConnection conn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayer (UnityEngine.Networking.NetworkConnection conn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnServerAddPlayerMessageInternal (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkConnection.InvokeHandler (Int16 msgType, UnityEngine.Networking.NetworkReader reader, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InvokeHandlerOnServer (UnityEngine.Networking.ULocalConnectionToServer conn, Int16 msgType, UnityEngine.Networking.MessageBase msg, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ULocalConnectionToServer.Send (Int16 msgType, UnityEngine.Networking.MessageBase msg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (UnityEngine.Networking.NetworkConnection readyConn, Int16 playerControllerId, UnityEngine.Networking.MessageBase extraMessage) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (UnityEngine.Networking.NetworkConnection readyConn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ClientScene.AddPlayer (Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.OnClientSceneChanged (UnityEngine.Networking.NetworkConnection conn) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.FinishLoadScene () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkManager.UpdateScene () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkIdentity.UNetStaticUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 192.168.0.21
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-192.168.0.21
+A connection has already been set as ready. There can only be one.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -46,15 +72,7 @@ platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Player
+platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -62,15 +80,15 @@ platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Player
+platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Player
+platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-Player
+platformPrefab 1(Clone)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -79,4 +97,4 @@ platformPrefab 1(Clone)
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 34c -> priority: 1 
+  Thread -> id: 1214 -> priority: 1 
