@@ -20,6 +20,12 @@ public class WeaponV2Script : NetworkBehaviour {
 	[SerializeField]
 	private Transform balleSpawn;
 
+	[SerializeField]
+	private Sprite shotgunSprite;
+
+	[SerializeField]
+	private Sprite akSprite;
+
 	// Use this for initialization
 	void Start () {
 		cooldown = 0.0f;
@@ -85,7 +91,7 @@ public class WeaponV2Script : NetworkBehaviour {
 			}
 			nbtir--;
 			if (nbtir == 0) {
-				equiped = "handgun";
+				CmdSetArme("handgun");
 			}
 		
 			break;
@@ -108,6 +114,16 @@ public class WeaponV2Script : NetworkBehaviour {
 	[Command]
 	public void CmdSetArme(string arme){
 		equiped = arme;
+		Sprite sprite = akSprite;
+		switch (arme) {
+			case "handgun":
+				sprite = akSprite;
+				break;
+			case "shotgun":
+				sprite = shotgunSprite;
+				break;
+		}
+		transform.FindChild ("WepSprite").GetComponent<SpriteRenderer> ().sprite = sprite;
 	}
 
 	[Command]

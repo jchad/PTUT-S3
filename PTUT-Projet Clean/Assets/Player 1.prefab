@@ -59,7 +59,7 @@ GameObject:
   - 4: {fileID: 4000010607754598}
   - 212: {fileID: 212000012216252562}
   m_Layer: 0
-  m_Name: AK-47
+  m_Name: WepSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,6 +269,8 @@ MonoBehaviour:
   ballePrefab: {fileID: 1000012081650540, guid: 1d17a0d6838d232468015f714b86bd38,
     type: 2}
   balleSpawn: {fileID: 4000011085338192}
+  shotgunSprite: {fileID: 21300000, guid: 26e6087f0775f6e41b3dd719d8ff31bc, type: 3}
+  akSprite: {fileID: 21300000, guid: 1df99971bcd28d044b3603d289e1f827, type: 3}
 --- !u!114 &114000011689012684
 MonoBehaviour:
   m_ObjectHideFlags: 1
