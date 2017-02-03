@@ -36,6 +36,10 @@ public class PlayerV2Script : NetworkBehaviour
 
 	[SerializeField]
 	private Transform groundPoint;
+	[SerializeField]
+	private Transform leftPoint;
+	[SerializeField]
+	private Transform rightPoint;
 
 	[SerializeField]
 	private float groundRadius;
@@ -117,8 +121,10 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private bool IsGrounded() {
 		if (body.velocity.y <= 0) {
-			Collider2D[] colliders = Physics2D.OverlapCircleAll (groundPoint.position, groundRadius, sol);
-			for (int i = 0; i < colliders.Length; i++) {
+			List<Collider2D> colliders = new List<Collider2D>(Physics2D.OverlapCircleAll (groundPoint.position, groundRadius, sol));
+			colliders.AddRange(Physics2D.OverlapCircleAll (leftPoint.position, groundRadius, sol));
+			colliders.AddRange(Physics2D.OverlapCircleAll (rightPoint.position, groundRadius, sol));
+			for (int i = 0; i < colliders.Count; i++) {
 				if (colliders [i].gameObject != gameObject) {
 					jump = false;
                     isDoubleJump = false;
