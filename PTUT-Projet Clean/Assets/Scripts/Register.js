@@ -39,7 +39,7 @@ function Register() {
     form.AddField( "myform_passbis", formPasswordbis );
     form.AddField( "myform_mail", formMail );
    
-    var w = WWW(URL, form); //here we create a var called 'w' and we sync with our URL and the form
+    var w = new WWW(URL, form); //here we create a var called 'w' and we sync with our URL and the form
     yield w; //we wait for the form to check the PHP file, so our game dont just hang
     if (w.error != null) {
         print(w.error); //if there is an error, tell us

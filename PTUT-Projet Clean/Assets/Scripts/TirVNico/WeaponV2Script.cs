@@ -37,11 +37,11 @@ public class WeaponV2Script : NetworkBehaviour {
 	public void attaque (Vector2 aimTo) {
 		switch (equiped) {
 		case "handgun":
-			cooldown = 0.5f;
+			cooldown = 0.3f;
 			CmdSpawnTir (aimTo);
 			break;
 		case "shotgun":
-			cooldown = 0.8f;
+			cooldown = 0.7f;
 			CmdSpawnTir (aimTo);
 			break;
 		}

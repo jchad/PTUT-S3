@@ -18,6 +18,7 @@ public class HP : MonoBehaviour
     {
         r = Screen.currentResolution;
         o = GameObject.FindGameObjectsWithTag("Player");
+		Texture2D t = new Texture2D (0, 0);
         
     }
 	void Update(){

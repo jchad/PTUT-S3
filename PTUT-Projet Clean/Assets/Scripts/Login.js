@@ -34,7 +34,7 @@ function Login() {
     form.AddField( "myform_hash", hash ); //add your hash code to the field myform_hash, check that this variable name is the same as in PHP file
     form.AddField( "myform_nick", formNick );
     form.AddField( "myform_pass", formPassword );
-    var w = WWW(URL, form); //here we create a var called 'w' and we sync with our URL and the form
+    var w = new WWW(URL, form); //here we create a var called 'w' and we sync with our URL and the form
     yield w; //we wait for the form to check the PHP file, so our game dont just hang
     if (w.error != null) {
         print(w.error); //if there is an error, tell us
