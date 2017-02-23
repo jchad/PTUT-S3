@@ -55,8 +55,16 @@ public class PlayerV2Script : NetworkBehaviour
 
 	private GameObject cam = null;
 
-	private bool doubleJump = true;
+	private bool bonusDoubleJump = true;
 	private bool isDoubleJump = false;
+
+    private bool bonusJetPack = true;
+    [SyncVar]
+    private bool jetPack = false;
+
+    private bool bonusShield = true;
+    [SyncVar]
+    private bool shield = false;
     // Le début des méthodes
     void Start()
 	{
@@ -97,7 +105,20 @@ public class PlayerV2Script : NetworkBehaviour
 			currentHealth = healthMax;
 			RpcRespawn ();
 		}
-		isGrounded = IsGrounded ();
+        jetPack = false;
+        if (shield)
+        {
+            shield = false;
+            if (isLocalPlayer)
+            {
+                GetComponent<SpriteRenderer>().material.color = Color.red; ;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().material.color = Color.yellow;
+            }
+        }
+        isGrounded = IsGrounded ();
 		getInput ();
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
 
@@ -112,11 +133,26 @@ public class PlayerV2Script : NetworkBehaviour
     }
 
 	private void getInput() {
-		shoot = Input.GetButtonDown("Fire2") | Input.GetButton("Fire1");
+		shoot = Input.GetButton("Fire1");
 		speedHor = Input.GetAxis("Horizontal");
 		if (Input.GetButtonDown ("Jump")) {
 			jump = true;
 		}
+        if (bonusJetPack) {
+            if (Input.GetButton("Fire2"))
+            {
+                jetPack = true;
+            }
+        }
+        if (bonusShield) {
+            if (Input.GetButton("Fire3"))
+            {
+                shield = true;
+                GetComponent<SpriteRenderer>().material.color = Color.blue;
+            
+            }
+        }
+        
 	}
 
 	private bool IsGrounded() {
@@ -143,16 +179,25 @@ public class PlayerV2Script : NetworkBehaviour
             jump = false;
 		}
 
-        else if (!isGrounded && doubleJump && !isDoubleJump && jump)
+        else if (!isGrounded && bonusDoubleJump && !isDoubleJump && jump)
         {
             isDoubleJump = true;
 			body.velocity = new Vector3 (0, 0, 0);
             body.AddForce(new Vector2(0, jumpForce));
         }
 
+        if (jetPack)
+        {
+            if (body.velocity.y < 20) {
+                body.AddForce(new Vector2(0, 600));
+            }
+        
+        }
+
+
 		body.velocity = new Vector2 (speedHor * maxiSpeed, body.velocity.y);
        cam.transform.position = transform.position + new Vector3(0, 0, -2);
-          
+         
     }
 		
 	public void InputTir() {
@@ -162,7 +207,7 @@ public class PlayerV2Script : NetworkBehaviour
 
 	public override void OnStartLocalPlayer()
 	{
-		GetComponent<MeshRenderer>().material.color = Color.red;
+		GetComponent<SpriteRenderer>().material.color = Color.red;
 	}
     public void RpcTakedommage(int dommage){
 		if (!isServer) {
@@ -210,6 +255,11 @@ public class PlayerV2Script : NetworkBehaviour
 		transform.position = spawnPoint;
         //doubleJump = false;
 
+    }
+
+    public bool isShield()
+    {
+        return shield;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -24,10 +24,17 @@ public class ShotScript : NetworkBehaviour {
 				scr.gethit (damage);
 			}
 		}
-		if (((string.Equals(collision.gameObject.name,"Player"))||string.Equals(collision.gameObject.name,"ennemy"))){
-			hit.GetComponent<PlayerV2Script>().RpcTakedommage(1);
-		}
-        Network.Destroy(gameObject);
+            if (((string.Equals(collision.gameObject.name, "Player")) || string.Equals(collision.gameObject.name, "ennemy")))
+            {
+                if (hit.GetComponent<PlayerV2Script>().isShield())
+                {
+                    hit.GetComponent<PlayerV2Script>().RpcTakedommage(1);
+                }
+            }
+        if (!string.Equals(collision.gameObject.name, "tirN"))
+        {
+            Network.Destroy(gameObject);
+        }
 
 		}
 		
