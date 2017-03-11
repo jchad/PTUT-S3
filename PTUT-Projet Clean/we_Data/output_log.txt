@@ -1,0 +1,169 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 950M             (ID=0x139a)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
+Loading C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
+- Completed reload, in  0.059 seconds
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 48Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.904000 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.855555 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 254.
+Total: 0.180000 ms (FindLiveObjects: 0.019111 ms CreateObjectMapping: 0.011555 ms MarkObjects: 0.145777 ms  DeleteObjects: 0.003111 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.308000 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 265.
+Total: 0.387555 ms (FindLiveObjects: 0.052000 ms CreateObjectMapping: 0.037777 ms MarkObjects: 0.292444 ms  DeleteObjects: 0.004000 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.277333 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 252.
+Total: 0.590666 ms (FindLiveObjects: 0.052000 ms CreateObjectMapping: 0.021777 ms MarkObjects: 0.508444 ms  DeleteObjects: 0.007111 ms)
+
+Platform assembly: C:\Users\Jordan\Documents\GitHub\PTUT-S3\PTUT-Projet Clean\we_Data\Managed\Boo.Lang.dll (this message is harmless)
+Test ok
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.409333 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 265.
+Total: 1.112000 ms (FindLiveObjects: 0.110666 ms CreateObjectMapping: 0.178222 ms MarkObjects: 0.812888 ms  DeleteObjects: 0.008888 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.425333 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 254.
+Total: 0.655111 ms (FindLiveObjects: 0.064888 ms CreateObjectMapping: 0.020444 ms MarkObjects: 0.561777 ms  DeleteObjects: 0.006666 ms)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+<br />
+<font size='1'><table class='xdebug-error xe-parse-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Parse error: syntax error, unexpected ':' in C:\wamp64\www\PTUT\login.php on line <i>37</i></th></tr>
+</table></font>
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SimpleJSON.JSONNode.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at SimpleJSON.JSON.Parse (System.String aJSON) [0x00000] in <filename unknown>:0 
+  at Login+$Login$1+$.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.360888 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 265.
+Total: 0.834222 ms (FindLiveObjects: 0.088444 ms CreateObjectMapping: 0.034666 ms MarkObjects: 0.706222 ms  DeleteObjects: 0.003111 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 388 -> priority: 1 
