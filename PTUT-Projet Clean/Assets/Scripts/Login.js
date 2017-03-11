@@ -1,8 +1,8 @@
 ﻿import SimpleJSON;
-import JSONParse;
+
 private var formNick = ""; //this is the field where the player will put the name to login
 private var formPassword = ""; //this is his password
-var infouser : User;
+public static var infouser : User = null;
 var formText = ""; //this field is where the messages sent by PHP script will be in
 
 var urlip   = "http://checkip.dyndns.org/";
@@ -10,8 +10,8 @@ static var pubIP = "";
 var xhr;
 
 
-var URL = "localhost/PTUT/login.php"; //change for your URL
-var hash = "hashcode"; //change your secret code, and remember to change into the PHP file too
+var URL = "localhost/PTUT/login.php"; 
+var hash = "hashcode"; 
 
 private var textrect = Rect (10, 90,800, 800); //just make a GUI object rectangle
 
@@ -47,6 +47,7 @@ public class User
 		tempsdeJeu = tempsJ;
 		niveau = niv;
 	}
+
 }
 
 
@@ -61,23 +62,17 @@ function Login() {
     if (w.error != null) {
         print(w.error); //if there is an error, tell us
     } else {
-    	var test=w.text;
-    	print(test);
-    	data = JSON.Parse(test);
+    	var data = JSON.Parse(w.text);
     	var N = parseInt(data["Statut"]);
-    	print(data["pseudo"].Value);
     	if(N==1){
-    		print("ok");
-    		print(data["pseudo"].Value);
-    		infouser = new User(parseInt(data["noJoueur"]),data["pseudo"].Value,data["dateInscription"].AsDate,data["tempsdeJeu"].Value,parseInt(data["niveau"]));
+    		var temp : User = new User(parseInt(data["noJoueur"]),data["pseudo"].Value,data["dateInscription"].AsDate,data["tempsdeJeu"].Value,parseInt(data["niveau"]));
     		print("ok");
     		CheckIP();
     		Debug.Log(pubIP);
-    		//Application.LoadLevel("Main");
+    		Application.LoadLevel("Main");
     	}else{
     		formText = data["message"]; //here we r	eturn the data our PHP told us
         }
-        print("Test ok");
         w.Dispose(); //clear our form in game
     }
 
@@ -93,7 +88,7 @@ function Login() {
 }
 
 function CheckIP(){
-    var www : WWW = new WWW (urlip);
+    var www : WWW = new WWW (URL);
     yield www;
    pubIP = www.tex;
    //pubIP = pubIP.Substring(pubIP.IndexOf(“:”)+1);
