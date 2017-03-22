@@ -29,7 +29,7 @@ public class ShotScript : NetworkBehaviour {
 		}
             if (((string.Equals(collision.gameObject.name, "Player")) || string.Equals(collision.gameObject.name, "ennemy")))
             {
-                if (hit.GetComponent<PlayerV2Script>().isShield())
+                if (!hit.GetComponent<PlayerV2Script>().isShield())
                 {
                     hit.GetComponent<PlayerV2Script>().RpcTakedommage(1);
                 }
@@ -41,5 +41,11 @@ public class ShotScript : NetworkBehaviour {
         }
 
 		}
+
+    [Command]
+    void CmdBlast()
+    {
+        
+    }
 		
 }

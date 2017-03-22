@@ -29,7 +29,10 @@ public class blast : NetworkBehaviour {
 		        Debug.Log("poueteuh");
 		        if (string.Compare(hit.name, "Player") == 0 || string.Compare(hit.name, "ennemy") == 0)
 		        {
-		            hit.GetComponent<PlayerV2Script>().RpcTakedommage(2);
+		            if (!hit.GetComponent<PlayerV2Script>().isShield())
+		            {
+		                hit.GetComponent<PlayerV2Script>().RpcTakedommage(2);
+		            }
 		        }
 		    }
 

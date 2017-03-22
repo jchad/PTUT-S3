@@ -124,7 +124,7 @@ public class PlayerV2Script : NetworkBehaviour
 
 		orientation ();
 
-		if (shoot && arme.isCooldownCooled ()) {
+		if (shoot && arme.isCooldownCooled () && !isShield()) {
 			
 			InputTir ();
 		}
