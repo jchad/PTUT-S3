@@ -111,7 +111,7 @@ public class PlayerV2Script : NetworkBehaviour
             shield = false;
             if (isLocalPlayer)
             {
-                GetComponent<SpriteRenderer>().material.color = Color.red; ;
+                GetComponent<SpriteRenderer>().material.color = Color.red;
             }
             else
             {
