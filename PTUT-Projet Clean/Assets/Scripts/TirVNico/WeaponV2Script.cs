@@ -26,6 +26,8 @@ public class WeaponV2Script : NetworkBehaviour {
 	[SerializeField]
 	private Sprite akSprite;
 
+    [SerializeField] private GameObject grenadePrefab;
+
 	// Use this for initialization
 	void Start () {
 		cooldown = 0.0f;
@@ -50,6 +52,10 @@ public class WeaponV2Script : NetworkBehaviour {
 			cooldown = 0.7f;
 			CmdSpawnTir (aimTo);
 			break;
+            case "grenade":
+		        cooldown = 1.5f;
+		        CmdSpawnTir(aimTo);
+		        break;
 		}
 	}
 
@@ -95,8 +101,15 @@ public class WeaponV2Script : NetworkBehaviour {
 			}
 		
 			break;
-		}
-	}	
+            case "grenade":
+                var grenade = (GameObject)Instantiate(grenadePrefab, balleSpawn.position, balleSpawn.rotation);
+                Destroy(grenade, 2.0f);
+                grenade.GetComponent<Rigidbody2D>().velocity = CalculDirection(aimTo) * 20;
+                Physics2D.IgnoreCollision(grenade.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                NetworkServer.Spawn(grenade);
+                break;
+        }
+    }	
 
 
 	public bool isCooldownCooled() {

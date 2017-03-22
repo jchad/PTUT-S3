@@ -254,6 +254,7 @@ public class PlayerV2Script : NetworkBehaviour
 		// Set the player’s position to the chosen spawn point
 		transform.position = spawnPoint;
         //doubleJump = false;
+        GetComponent<WeaponV2Script>().CmdSetArme("handgun");
 
     }
 
@@ -276,7 +277,13 @@ public class PlayerV2Script : NetworkBehaviour
 			arme.CmdSetNbTir (5);
             Network.Destroy(collision.gameObject);
         }
-       
+       else if (string.Equals(collision.gameObject.name, "GrenadeBonus"))
+        {
+            arme.CmdSetArme("grenade");
+            Debug.Log("oups");
+            arme.CmdSetNbTir(3);
+            Network.Destroy(collision.gameObject);
+        }
 
     }
 }

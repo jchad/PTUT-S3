@@ -23,7 +23,8 @@ public class ShotScript : NetworkBehaviour {
 			GameObject boom = Instantiate (blastPrefab) as GameObject;
 			boom.transform.localPosition = transform.localPosition;
 			boom.GetComponent<blast> ().radius = 0.3f;
-			Debug.Log ("Boom ?");
+            boom.GetComponent<blast>().parent = "tir";
+            Debug.Log ("Boom ?");
 			NetworkServer.Spawn (boom);
 		}
             if (((string.Equals(collision.gameObject.name, "Player")) || string.Equals(collision.gameObject.name, "ennemy")))
@@ -35,6 +36,7 @@ public class ShotScript : NetworkBehaviour {
             }
         if (!string.Equals(collision.gameObject.name, "tirN"))
         {
+           
             Network.Destroy(gameObject);
         }
 

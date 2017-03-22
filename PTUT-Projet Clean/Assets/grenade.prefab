@@ -16,19 +16,19 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000012056002544}
-  - 33: {fileID: 33000013011963824}
-  - 23: {fileID: 23000013725270058}
-  - 114: {fileID: 114000012980576294}
-  - 114: {fileID: 114000013966916694}
-  - 114: {fileID: 114000013894170306}
-  - 114: {fileID: 114000011179313450}
-  - 50: {fileID: 50000011216707052}
-  - 58: {fileID: 58000010087694806}
+  - component: {fileID: 4000012056002544}
+  - component: {fileID: 33000013011963824}
+  - component: {fileID: 23000013725270058}
+  - component: {fileID: 114000013894170306}
+  - component: {fileID: 114000011179313450}
+  - component: {fileID: 50000011216707052}
+  - component: {fileID: 58000010087694806}
+  - component: {fileID: 114467662923039188}
+  - component: {fileID: 148634900255222694}
   m_Layer: 0
-  m_Name: tir
+  m_Name: grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,11 +42,11 @@ Transform:
   m_GameObject: {fileID: 1000012673103506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: -1.18, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23000013725270058
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -61,7 +61,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -69,7 +71,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -85,17 +87,20 @@ MeshFilter:
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &50000011216707052
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012673103506}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_IsKinematic: 0
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -134,36 +139,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114000012980576294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012673103506}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599b5efd8fa183d4d90db650c12b62e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  isEnemyShot: 0
-  joueur:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
 --- !u!114 &114000013894170306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,17 +171,28 @@ MonoBehaviour:
     i15: 164
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114000013966916694
+--- !u!114 &114467662923039188
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012673103506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06185b28b1119e4abf435bf2d62fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6ea55b7dbfd05438016aa32f2820b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedx: 30
-  speedy: 30
-  direction: {x: 0, y: 0, z: 0}
+  blastPrefab: {fileID: 1379379992609118, guid: efc6131ff527d0b408bab962a26cbfc2,
+    type: 2}
+--- !u!148 &148634900255222694
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012673103506}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 4000012056002544}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
