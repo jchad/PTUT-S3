@@ -7,6 +7,7 @@ public class ShotScript : NetworkBehaviour {
 	public int damage = 1;
 	public bool isEnemyShot = false;
     public NetworkHash128 joueur;
+	public GameObject blastPrefab;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,13 +17,14 @@ public class ShotScript : NetworkBehaviour {
 
 
 	void OnCollisionEnter2D(Collision2D collision){
-		var hit = collision.gameObject;
+		GameObject hit = collision.gameObject;
 		Debug.Log (collision.gameObject.name);
 		if (string.Compare (hit.name, "platformPrefab 1(Clone)")==0) {
-			var scr = hit.GetComponent<Platform> ();
-			if (scr != null) {
-				scr.gethit (damage);
-			}
+			GameObject boom = Instantiate (blastPrefab) as GameObject;
+			boom.transform.localPosition = transform.localPosition;
+			boom.GetComponent<blast> ().radius = 0.3f;
+			Debug.Log ("Boom ?");
+			NetworkServer.Spawn (boom);
 		}
             if (((string.Equals(collision.gameObject.name, "Player")) || string.Equals(collision.gameObject.name, "ennemy")))
             {

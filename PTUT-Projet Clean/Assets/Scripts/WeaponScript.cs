@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class WeaponScript : NetworkBehaviour
 {
 
-    public Transform shotPrefab;
+	public GameObject shotPrefab;
 
     /// <summary>
     /// Temps de rechargement entre deux tirs
@@ -50,8 +50,10 @@ public class WeaponScript : NetworkBehaviour
             shootCooldown = shootingRate;
 
             // Création d'un objet copie du prefab
-            var shotTransform = (GameObject)Instantiate(shotPrefab, transform.position, transform.rotation);
-
+			GameObject shotTransform = Instantiate(shotPrefab) as GameObject;
+			shotTransform.transform.parent = transform;
+			shotTransform.transform.position = transform.position;
+			shotTransform.transform.rotation = transform.rotation;
 
      //       shotTransform.position = transform.position;
 

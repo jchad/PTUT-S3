@@ -1,13 +1,13 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-CSharp-firstpass.csproj", "{E3ABB938-B306-8011-F1A8-B8CCE63A009C}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTUT-Projet Clean", "Assembly-CSharp-firstpass.csproj", "{E3ABB938-B306-8011-F1A8-B8CCE63A009C}"
 EndProject
-Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-CSharp.csproj", "{79AE1036-9CF5-050E-8CB6-7585678C26F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTUT-Projet Clean", "Assembly-CSharp.csproj", "{79AE1036-9CF5-050E-8CB6-7585678C26F1}"
 EndProject
-Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-CSharp-Editor.csproj", "{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTUT-Projet Clean", "Assembly-CSharp-Editor.csproj", "{DA6D2FAF-2A3A-A67F-D40C-D668444532AE}"
 EndProject
-Project("{DB38F4EF-E86C-7311-B2F4-8C61EC41CF0C}") = "PTUT-Projet Clean", "Assembly-UnityScript.unityproj", "{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTUT-Projet Clean", "Assembly-UnityScript.unityproj", "{AE3DBE77-4839-AA2B-BC39-010F8193BB6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
