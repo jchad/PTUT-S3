@@ -2,7 +2,7 @@
 
 private var formNick = ""; //this is the field where the player will put the name to login
 private var formPassword = ""; //this is his password
-public static var infouser : User = null;
+public static var infouser : JSONNode;
 var formText = ""; //this field is where the messages sent by PHP script will be in
 
 var urlip   = "http://checkip.dyndns.org/";
@@ -13,14 +13,14 @@ var xhr;
 var URL = "localhost/PTUT/login.php"; 
 var hash = "hashcode"; 
 
-private var textrect = Rect (10, 90,800, 800); //just make a GUI object rectangle
+private var textrect = Rect (10, 90,800, 100); //just make a GUI object rectangle
 
 function OnGUI() {
-    GUI.Label( Rect (10, 10, 80, 20), "Your nick:" ); //text with your nick
-    GUI.Label( Rect (10, 30, 80, 20), "Your pass:" );
+    GUI.Label( Rect (10, 10, 120, 20), "Pseudo:" ); //text with your nick
+    GUI.Label( Rect (10, 30, 120, 20), "Mot de passe:" );
 
-    formNick = GUI.TextField ( Rect (90, 10, 100, 20), formNick ); //here you will insert the new value to variable formNick
-    formPassword = GUI.TextField ( Rect (90, 30, 100, 20), formPassword ); //same as above, but for password
+    formNick = GUI.TextField ( Rect (130, 10, 100, 20), formNick ); //here you will insert the new value to variable formNick
+    formPassword = GUI.PasswordField ( Rect (130, 30, 100, 20), formPassword, "*"[0] ); //same as above, but for password
 
     if ( GUI.Button ( Rect (10, 60, 100, 20) , "Connexion" ) ){ //just a button
         Login();
@@ -63,15 +63,15 @@ function Login() {
         print(w.error); //if there is an error, tell us
     } else {
     	var data = JSON.Parse(w.text);
-    	var N = parseInt(data["Statut"]);
+    	var N = data["Statut"].AsInt;
     	if(N==1){
-    		var temp : User = new User(parseInt(data["noJoueur"]),data["pseudo"].Value,data["dateInscription"].AsDate,data["tempsdeJeu"].Value,parseInt(data["niveau"]));
+    		infouser = data;
     		print("ok");
     		CheckIP();
     		Debug.Log(pubIP);
     		Application.LoadLevel("Main");
     	}else{
-    		formText = data["message"]; //here we r	eturn the data our PHP told us
+    		formText = data["message"].Value; //here we r	eturn the data our PHP told us
         }
         w.Dispose(); //clear our form in game
     }
